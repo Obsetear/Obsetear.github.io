@@ -6,19 +6,53 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hello World | Hexo</title>
+  <title>css学习笔记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="一、css的三种引入方式（1）外部样式可以把css写到另一个文本里，后缀为.css然后在html里(注意要把这行代码写在head标签里)（2）内页样式把css代码直接写在head标签里把css代码写在style里（3）行内样式把css代码写在要修饰的内容的标签里二、css的基本语法css由两个注意部分组成：    1、选择器    2、一条或多条声明css的注释：/**/三、常用选择器  （1）i">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2019/05/11/hello-world/index.html">
+<meta property="og:title" content="css学习笔记">
+<meta property="og:url" content="http://yoursite.com/2019/03/27/css学习笔记/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="一、css的三种引入方式（1）外部样式可以把css写到另一个文本里，后缀为.css然后在html里(注意要把这行代码写在head标签里)（2）内页样式把css代码直接写在head标签里把css代码写在style里（3）行内样式把css代码写在要修饰的内容的标签里二、css的基本语法css由两个注意部分组成：    1、选择器    2、一条或多条声明css的注释：/**/三、常用选择器  （1）i">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-11T12:06:40.039Z">
+<meta property="og:image" content="http://yoursite.com/picture/43.png">
+<meta property="og:image" content="http://yoursite.com/picture/45.png">
+<meta property="og:image" content="http://yoursite.com/picture/44.png">
+<meta property="og:image" content="http://yoursite.com/picture/46.png">
+<meta property="og:image" content="http://yoursite.com/picture/47.png">
+<meta property="og:image" content="http://yoursite.com/picture/48.png">
+<meta property="og:image" content="http://yoursite.com/picture/49.png">
+<meta property="og:image" content="http://yoursite.com/picture/50.png">
+<meta property="og:image" content="http://yoursite.com/picture/51.png">
+<meta property="og:image" content="http://yoursite.com/picture/52.png">
+<meta property="og:image" content="http://yoursite.com/picture/53.png">
+<meta property="og:image" content="http://yoursite.com/picture/54.png">
+<meta property="og:image" content="http://yoursite.com/picture/55.png">
+<meta property="og:image" content="http://yoursite.com/picture/56.png">
+<meta property="og:image" content="http://yoursite.com/picture/57.png">
+<meta property="og:image" content="http://yoursite.com/picture/58.png">
+<meta property="og:image" content="http://yoursite.com/picture/59.png">
+<meta property="og:image" content="http://yoursite.com/picture/60.png">
+<meta property="og:image" content="http://yoursite.com/picture/61.png">
+<meta property="og:image" content="http://yoursite.com/picture/62.png">
+<meta property="og:image" content="http://yoursite.com/picture/63.png">
+<meta property="og:image" content="http://yoursite.com/picture/64.png">
+<meta property="og:image" content="http://yoursite.com/picture/65.png">
+<meta property="og:image" content="http://yoursite.com/picture/66.png">
+<meta property="og:image" content="http://yoursite.com/picture/67.png">
+<meta property="og:image" content="http://yoursite.com/picture/68.png">
+<meta property="og:image" content="http://yoursite.com/picture/69.png">
+<meta property="og:image" content="http://yoursite.com/picture/70.png">
+<meta property="og:image" content="http://yoursite.com/picture/71.png">
+<meta property="og:image" content="http://yoursite.com/picture/72.png">
+<meta property="og:image" content="http://yoursite.com/picture/73.png">
+<meta property="og:image" content="http://yoursite.com/picture/74.png">
+<meta property="og:image" content="http://yoursite.com/picture/75.png">
+<meta property="og:updated_time" content="2019-03-31T12:05:45.403Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="css学习笔记">
+<meta name="twitter:description" content="一、css的三种引入方式（1）外部样式可以把css写到另一个文本里，后缀为.css然后在html里(注意要把这行代码写在head标签里)（2）内页样式把css代码直接写在head标签里把css代码写在style里（3）行内样式把css代码写在要修饰的内容的标签里二、css的基本语法css由两个注意部分组成：    1、选择器    2、一条或多条声明css的注释：/**/三、常用选择器  （1）i">
+<meta name="twitter:image" content="http://yoursite.com/picture/43.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,35 +188,76 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-css学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      css学习笔记
     </h1>
   
 
         
-        <a href="/2019/05/11/hello-world/" class="archive-article-date">
-  	<time datetime="2019-05-11T12:06:40.039Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-11</time>
+        <a href="/2019/03/27/css学习笔记/" class="archive-article-date">
+  	<time datetime="2019-03-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1>一、css的三种引入方式</h1><br><h3>（1）外部样式</h3><br>可以把css写到另一个文本里，后缀为.css<br><img src="/picture/43.png"><br><br>然后在html里<br><br><img src="/picture/45.png"><br><img src="/picture/44.png"><br><br>(注意要把这行代码写在head标签里)<br><br><h3>（2）内页样式</h3><br>把css代码直接写在head标签里<br><img src="/picture/46.png"><br><br>把css代码写在style里<br><br><h3>（3）行内样式</h3><br>把css代码写在要修饰的内容的标签里<br><img src="/picture/47.png"><br><br><h1>二、css的基本语法</h1><br>css由两个注意部分组成：<br>    1、选择器<br>    2、一条或多条声明<br><br><img src="/picture/48.png"><br><img src="/picture/49.png"><br><br><p>css的注释：/**/</p><br><br><h1>三、常用选择器</h1>
+
+<h3>（1）id选择器：</h3><br>通过给标签加id属性，并给与一个名称（不可重复，这个名称只能让一个标签使用）<br><br><img src="/picture/50.png"><br><img src="/picture/51.png"><br><br><h3>（2）类（class）选择器</h3><br>给标签加class属性，并给与一个名称（可重复，这个名称可以让多个标签使用，也可以让一个标签使用多个类名）<br><br><img src="/picture/52.png"><br><br><h3>（3）标签选择器</h3><br>直接用html标签作为选择器<br><br><img src="/picture/53.png"><br><img src="/picture/54.png"><br><br><h3>（4）交集选择器</h3><br>一个标签选择器后面跟一个类选择器或者一个id选择器<br>(中间不能有空格)<br><br>标签选择器.类选择器<br>标签选择器#id选择器<br><br><h3>（5）并集选择器</h3><br>多个选择器以逗号相连，只要满足其一就会被选中<br>(上面的几个选择器都可以写入此选择器)<br><br>div,p,h3,div.color,div#p  等等<br><br><h3>（6）后代选择器</h3><br>以空格相连的多个选择器，外层的选择器写在内层选择器前面<br><br><h3>（7）伪类选择器</h3>
+
+<p><img src="/picture/55.png"></p>
+<p></p><h3>（8）通配符选择器</h3><br>它是一种特殊的选择器，用 * 表示，可以选中所有元素对象<p></p>
+<p>*{</p>
+<p>}</p>
+<h1>四、文本</h1><br><p style="color:red;font-size:23px">（注意：以下分号和冒号均为英文符号，并且冒号后不能有空格）</p><br><h3>（1）首行缩进</h3><br>text-indent:值;<br>(值可以为数字，单位为px，也可以是百分比)<br><br><img src="/picture/56.png"><br><br><h3>（2）对齐方式</h3><br>text-align:值;<br>值可以为：left（左对齐）、 center（居中）、 right（右对齐）<br><br><img src="/picture/57.png"><br><br><h3>（3）字体行高</h3><br>line-height:值;<br>(值可以为数字，单位为px，也可以是百分比，默认值为：nomal)<br><br><img src="/picture/58.png"><br><br><h3>（4）单词字间距</h3><br>word-spacing:值;<br>（值为数字，单位为px，默认值为：nomal，但不可以为百分比）<br><br><img src="/picture/59.png"><br><br><h3>（5）文字间距</h3><br>letter-spacing:值;<br>（值为数字，单位为px，默认值为：nomal，但不可以为百分比）<br><br><img src="/picture/60.png"><br><br><h3>（6）文字下划线</h3><br>text-decoration:值;<br>（常用值：underline（有下划线）或者none（无下滑线））<br><br><img src="/picture/61.png"><br><br><h3>（7）文字字体</h3><br>front-family:值;<br>（值为字体的名称）<br><br><img src="/picture/62.png"><br><br>多个字体用逗号隔开<br>front-family:值1,值2,值3;<br>（值1先显示，如果没有值1这种字体则显示值2，如果值2也没有，那就显示值3）<br><br><h3>(8)字体风格</h3><br>front-style:值;<br>（值可以为：normal（正常）、italic（斜体）、oblique（倾斜））<br>（个人觉得斜体和倾斜的效果没有多大的区别）<br><br><img src="/picture/63.png"><br><br><h3>（9）字体大小</h3><br>font-size:值;<br>（值为数字，单位是px）<br><br><img src="/picture/64.png"><br><br><h3>（10）字体颜色</h3><br>color:值;<br>（值可以为颜色对应的英语单词，也可以为颜色代码）<br><br><img src="/picture/65.png"><br><br><h3>（11）字体加粗</h3><br>font-weight:值;<br>（常用值：normal（正常）、bold（加粗））<br><br><img src="/picture/66.png"><br><br><h1>五、块级元素的构造</h1>
+
+<p></p><h3>(1)块级元素的宽高</h3><br>width:值;<br>height:值;<br>（值可以为数字，单位为px，也可以为百分比）<p></p>
+<p><img src="/picture/67.png"></p>
+<p></p><h3>（2）块级元素的背景</h3><p></p>
+<p></p><h5>背景颜色：</h5><br>    background-color:值;<br>    （值可以为颜色对应的英语单词，也可以为颜色代码）<p></p>
+<p><img src="/picture/68.png"></p>
+<p></p><h5>背景图片：</h5><br>    background-image:url();<br>    （括号里写要引入图片的路径）<p></p>
+<pre><code>但图片的引入往往伴随着背景图片重复的问题
+</code></pre><p></p><h5>背景图片重复的问题</h5><br>background-repeat:值;<br>（值可以为：repeat-x（x轴有重复现象）、repeat-y（y轴有重复现象）、no-repeat（x轴和y轴都没有重复现象））<p></p>
+<p><img src="/picture/69.png"></p>
+<p></p><h5>背景图片的位置</h5><br>background-position:值;<p></p>
+<p>1.值可以为关键字：<br>设置x轴的值：left , right , center<br>设置y轴的值：top , bottom , center</p>
+<p>2.值也可以为数字，单位为px（第一个值表示水平方向，第二个值表示垂直方向）<br>3.值还可以为百分比（第一个值表示水平方向，第二个值表示垂直方向）<br>4.最重要的事，值还可以混用</p>
+<p><img src="/picture/70.png"></p>
+<p></p><h5>背景关联</h5><br>background-attachment:fixed;<br>（使用背景关联后背景图片就会固定）<p></p>
+<p><img src="/picture/71.png"></p>
+<p style="color:red">以上关于背景的设置还可以这样写：<br>background:#00FF00 url() no-repeat fixed center left </p>
+
+<p></p><h3>（3）边框</h3><br>border:值1 值2 值3;<p></p>
+<p>值1一般为数字，单位为px，表示边框宽度。<br>值2一般为solid（实线）或dashed（虚线）<br>值3一般为颜色值，表示边框颜色，值可以为英文单词也可以为颜色代码</p>
+<p>边框还可以分开设置</p>
+<p>左边框：border-left:值1 值2 值3;<br>右边框：border-right:值1 值2 值3;<br>上边框：border-top:值1 值2 值3;<br>下边框：border-bottom:值1 值2 值3;</p>
+<p></p><h1>六、定位</h1><p></p>
+<p></p><h3>（1）相对定位</h3><br>相对定位是相对于它原来的位置进行定位<p></p>
+<p>position:relative;</p>
+<p>水平方向：left:值;<br>         right:值;<br>（left和right只能用一个）</p>
+<p>垂直方向：top:值;<br>         bottom:值;<br>（top和bottom只能用一个）</p>
+<p><img src="/picture/72.png"></p>
+<p></p><h3>（2）绝对定位</h3><br>绝对定位是相对于整个页面的左上角进行定位<p></p>
+<p>position:absolute;</p>
+<p>水平方向：left:值;<br>         right:值;<br>（left和right只能用一个）</p>
+<p>垂直方向：top:值;<br>         bottom:值;<br>（top和bottom只能用一个）</p>
+<p><img src="/picture/73.png"></p>
+<p></p><h3>（3）固定定位</h3><br>固定定位是相对于浏览器的窗口进行定位<p></p>
+<p>position:fixed;</p>
+<p>水平方向：left:值;<br>         right:值;<br>（left和right只能用一个）</p>
+<p>垂直方向：top:值;<br>         bottom:值;<br>（top和bottom只能用一个）</p>
+<p><img src="/picture/74.png"></p>
+<p></p><h3>（4）重叠元素的堆叠设置</h3><br>在每个设置了定位的元素里加上z-index:值;<p></p>
+<p>值为数字，可以为负，只要能比较出大小即可，数值大的堆叠在上面</p>
+<p><img src="/picture/75.png"></p>
 
       
 
@@ -262,7 +337,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/05/11/hello-world/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/27/css学习笔记/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -276,20 +351,15 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/05/11/你好/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/05/11/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          你好
+          Hello World
         
       </div>
     </a>
   
-  
-    <a href="/2019/03/27/css学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">css学习笔记</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 

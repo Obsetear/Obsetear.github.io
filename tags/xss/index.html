@@ -6,29 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>画哈夫曼树 | Obsetion</title>
+  <title>Tag: xss | Obsetion</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="哈弗曼树又称最优二叉树，是一类带权路径长度最短的树，其画法如下： 已知一组数字：4，9，1，5，1，7，9，1，1">
-<meta name="keywords" content="数据结构">
-<meta property="og:type" content="article">
-<meta property="og:title" content="画哈夫曼树">
-<meta property="og:url" content="http://yoursite.com/2019/04/13/画哈弗曼树/index.html">
+  <meta name="description" content="Ò»¸ö²ËÄñµÄÑ§Ï°¼ÇÂ¼">
+<meta name="keywords" content="Ô½Å¬Á¦£¬Ô½ÐÒÔË">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Obsetion">
+<meta property="og:url" content="http://yoursite.com/tags/xss/index.html">
 <meta property="og:site_name" content="Obsetion">
-<meta property="og:description" content="哈弗曼树又称最优二叉树，是一类带权路径长度最短的树，其画法如下： 已知一组数字：4，9，1，5，1，7，9，1，1">
+<meta property="og:description" content="Ò»¸ö²ËÄñµÄÑ§Ï°¼ÇÂ¼">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/picture/77.png">
-<meta property="og:image" content="http://yoursite.com/picture/78.png">
-<meta property="og:image" content="http://yoursite.com/picture/79.png">
-<meta property="og:image" content="http://yoursite.com/picture/80.png">
-<meta property="og:image" content="http://yoursite.com/picture/81.png">
-<meta property="og:image" content="http://yoursite.com/picture/82.png">
-<meta property="og:image" content="http://yoursite.com/picture/83.png">
-<meta property="og:image" content="http://yoursite.com/picture/84.png">
-<meta property="og:updated_time" content="2019-05-16T09:36:27.982Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="画哈夫曼树">
-<meta name="twitter:description" content="哈弗曼树又称最优二叉树，是一类带权路径长度最短的树，其画法如下： 已知一组数字：4，9，1，5，1，7，9，1，1">
-<meta name="twitter:image" content="http://yoursite.com/picture/77.png">
+<meta name="twitter:title" content="Obsetion">
+<meta name="twitter:description" content="Ò»¸ö²ËÄñµÄÑ§Ï°¼ÇÂ¼">
   
     <link rel="alternative" href="/atom.xml" title="Obsetion" type="application/atom+xml">
   
@@ -168,202 +158,98 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-画哈弗曼树" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      画哈夫曼树
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/06/11/xss挑战之旅学习笔记/" class="archive-article-date">
+  	<time datetime="2019-06-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-11</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/06/11/xss挑战之旅学习笔记/">xss挑战之旅学习笔记</a>
     </h1>
   
 
-        
-        <a href="/2019/04/13/画哈弗曼树/" class="archive-article-date">
-  	<time datetime="2019-04-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>哈弗曼树又称最优二叉树，是一类带权路径长度最短的树，其画法如下：</p>
-<p>已知一组数字：4，9，1，5，1，7，9，1，1<br><a id="more"></a></p>
-<h2 id="第一步："><a href="#第一步：" class="headerlink" title="第一步："></a>第一步：</h2><p>先对这组数从小到大进行排序：1，1，1，1，4，5，7，9，9</p>
-<h2 id="第二步："><a href="#第二步：" class="headerlink" title="第二步："></a>第二步：</h2><p>选最小两个数画出一个树<br><img src="/picture/77.png"><br>用这两个数的和代替这两个数放在数组中：1， 1， 2， 4， 5， 7， 9， 9</p>
-<h2 id="第三步："><a href="#第三步：" class="headerlink" title="第三步："></a>第三步：</h2><p>再选出最小的两个数画树<br><img src="/picture/78.png"><br>再用这两个数的和代替这两个数放在数组中：2， 2， 4， 5， 7， 9， 9</p>
-<h2 id="第四步：再选出最小的两个数画树"><a href="#第四步：再选出最小的两个数画树" class="headerlink" title="第四步：再选出最小的两个数画树"></a>第四步：再选出最小的两个数画树</h2><p><img src="/picture/79.png"><br>然后再排序：4， 4， 5， 7， 9， 9</p>
-<h2 id="第五步："><a href="#第五步：" class="headerlink" title="第五步："></a>第五步：</h2><p>然后再选择最小的两个数画树（注意：如果这两个数其中一个为刚才合成的数，则如果另一个数比它大就放在它的右边，如果比它小就放在它的左边，如果两个数相等，则放哪一边都行）<br><img src="/picture/80.png"><br>这时数组中的数有： 5， 7，8， 9， 9</p>
-<h2 id="第六步："><a href="#第六步：" class="headerlink" title="第六步："></a>第六步：</h2><p>重复上述步骤<br><img src="/picture/81.png"></p>
-<p>这时数组里的数有： 8， 9， 9， 13</p>
-<h2 id="第七步："><a href="#第七步：" class="headerlink" title="第七步："></a>第七步：</h2><p>继续重复上述步骤<br><img src="/picture/82.png"><br>这时数组里的数有：  9， 13， 17</p>
-<h2 id="第八步："><a href="#第八步：" class="headerlink" title="第八步："></a>第八步：</h2><p>继续重复上述步骤<br><img src="/picture/83.png"></p>
-<p>这时数组里的数有：  17， 21</p>
-<h2 id="最后一步："><a href="#最后一步：" class="headerlink" title="最后一步："></a>最后一步：</h2><p>继续重复上述步骤<br><img src="/picture/84.png"></p>
-<p>这样哈弗曼树就画成了（虽然画的不是多好看，但应该能看懂）</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">xss</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/13/画哈弗曼树/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
   
-<nav id="article-nav">
-  
-    <a href="/2019/04/13/数据结构：顺序表/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          数据结构：顺序表
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/04/07/PHP学习笔记（1）/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">PHP学习笔记（1）</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/06/10/xss学习总结/" class="archive-article-date">
+  	<time datetime="2019-06-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-10</time>
+</a>
         </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一步："><span class="toc-number">1.</span> <span class="toc-text">第一步：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二步："><span class="toc-number">2.</span> <span class="toc-text">第二步：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三步："><span class="toc-number">3.</span> <span class="toc-text">第三步：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第四步：再选出最小的两个数画树"><span class="toc-number">4.</span> <span class="toc-text">第四步：再选出最小的两个数画树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第五步："><span class="toc-number">5.</span> <span class="toc-text">第五步：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第六步："><span class="toc-number">6.</span> <span class="toc-text">第六步：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第七步："><span class="toc-number">7.</span> <span class="toc-text">第七步：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第八步："><span class="toc-number">8.</span> <span class="toc-text">第八步：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最后一步："><span class="toc-number">9.</span> <span class="toc-text">最后一步：</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/06/10/xss学习总结/">xss学习总结</a>
+    </h1>
+  
+
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">xss</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+
         </div>
-        
-    </div>
-</aside>
-
-
-
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
   
   
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -386,9 +272,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

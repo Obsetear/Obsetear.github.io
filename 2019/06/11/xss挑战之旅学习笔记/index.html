@@ -6,29 +6,52 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>画哈夫曼树 | Obsetion</title>
+  <title>xss挑战之旅学习笔记 | Obsetion</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="哈弗曼树又称最优二叉树，是一类带权路径长度最短的树，其画法如下： 已知一组数字：4，9，1，5，1，7，9，1，1">
-<meta name="keywords" content="数据结构">
+  <meta name="description" content="前言：前几天学了xss攻击，觉得有必要写一篇博客记录一下。 题目链接： http://test.xss.tv">
+<meta name="keywords" content="xss">
 <meta property="og:type" content="article">
-<meta property="og:title" content="画哈夫曼树">
-<meta property="og:url" content="http://yoursite.com/2019/04/13/画哈弗曼树/index.html">
+<meta property="og:title" content="xss挑战之旅学习笔记">
+<meta property="og:url" content="http://yoursite.com/2019/06/11/xss挑战之旅学习笔记/index.html">
 <meta property="og:site_name" content="Obsetion">
-<meta property="og:description" content="哈弗曼树又称最优二叉树，是一类带权路径长度最短的树，其画法如下： 已知一组数字：4，9，1，5，1，7，9，1，1">
+<meta property="og:description" content="前言：前几天学了xss攻击，觉得有必要写一篇博客记录一下。 题目链接： http://test.xss.tv">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/picture/77.png">
-<meta property="og:image" content="http://yoursite.com/picture/78.png">
-<meta property="og:image" content="http://yoursite.com/picture/79.png">
-<meta property="og:image" content="http://yoursite.com/picture/80.png">
-<meta property="og:image" content="http://yoursite.com/picture/81.png">
-<meta property="og:image" content="http://yoursite.com/picture/82.png">
-<meta property="og:image" content="http://yoursite.com/picture/83.png">
-<meta property="og:image" content="http://yoursite.com/picture/84.png">
-<meta property="og:updated_time" content="2019-05-16T09:36:27.982Z">
+<meta property="og:image" content="http://yoursite.com/picture/104.png">
+<meta property="og:image" content="http://yoursite.com/picture/103.png">
+<meta property="og:image" content="http://yoursite.com/picture/105.png">
+<meta property="og:image" content="http://yoursite.com/picture/107.png">
+<meta property="og:image" content="http://yoursite.com/picture/108.png">
+<meta property="og:image" content="http://yoursite.com/picture/110.png">
+<meta property="og:image" content="http://yoursite.com/picture/111.png">
+<meta property="og:image" content="http://yoursite.com/picture/112.png">
+<meta property="og:image" content="http://yoursite.com/picture/113.png">
+<meta property="og:image" content="http://yoursite.com/picture/114.png">
+<meta property="og:image" content="http://yoursite.com/picture/115.png">
+<meta property="og:image" content="http://yoursite.com/picture/116.png">
+<meta property="og:image" content="http://yoursite.com/picture/117.png">
+<meta property="og:image" content="http://yoursite.com/picture/118.png">
+<meta property="og:image" content="http://yoursite.com/picture/119.png">
+<meta property="og:image" content="http://yoursite.com/picture/120.png">
+<meta property="og:image" content="http://yoursite.com/picture/121.png">
+<meta property="og:image" content="http://yoursite.com/picture/122.png">
+<meta property="og:image" content="http://yoursite.com/picture/124.png">
+<meta property="og:image" content="http://yoursite.com/picture/125.png">
+<meta property="og:image" content="http://yoursite.com/picture/126.png">
+<meta property="og:image" content="http://yoursite.com/picture/127.png">
+<meta property="og:image" content="http://yoursite.com/picture/129.png">
+<meta property="og:image" content="http://yoursite.com/picture/130.png">
+<meta property="og:image" content="http://yoursite.com/picture/128.png">
+<meta property="og:image" content="http://yoursite.com/picture/135.png">
+<meta property="og:image" content="http://yoursite.com/picture/131.png">
+<meta property="og:image" content="http://yoursite.com/picture/132.png">
+<meta property="og:image" content="http://yoursite.com/picture/136.png">
+<meta property="og:image" content="http://yoursite.com/picture/133.png">
+<meta property="og:image" content="http://yoursite.com/picture/134.png">
+<meta property="og:updated_time" content="2019-06-11T11:22:16.963Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="画哈夫曼树">
-<meta name="twitter:description" content="哈弗曼树又称最优二叉树，是一类带权路径长度最短的树，其画法如下： 已知一组数字：4，9，1，5，1，7，9，1，1">
-<meta name="twitter:image" content="http://yoursite.com/picture/77.png">
+<meta name="twitter:title" content="xss挑战之旅学习笔记">
+<meta name="twitter:description" content="前言：前几天学了xss攻击，觉得有必要写一篇博客记录一下。 题目链接： http://test.xss.tv">
+<meta name="twitter:image" content="http://yoursite.com/picture/104.png">
   
     <link rel="alternative" href="/atom.xml" title="Obsetion" type="application/atom+xml">
   
@@ -168,40 +191,110 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-画哈弗曼树" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-xss挑战之旅学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      画哈夫曼树
+      xss挑战之旅学习笔记
     </h1>
   
 
         
-        <a href="/2019/04/13/画哈弗曼树/" class="archive-article-date">
-  	<time datetime="2019-04-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-13</time>
+        <a href="/2019/06/11/xss挑战之旅学习笔记/" class="archive-article-date">
+  	<time datetime="2019-06-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>哈弗曼树又称最优二叉树，是一类带权路径长度最短的树，其画法如下：</p>
-<p>已知一组数字：4，9，1，5，1，7，9，1，1<br><a id="more"></a></p>
-<h2 id="第一步："><a href="#第一步：" class="headerlink" title="第一步："></a>第一步：</h2><p>先对这组数从小到大进行排序：1，1，1，1，4，5，7，9，9</p>
-<h2 id="第二步："><a href="#第二步：" class="headerlink" title="第二步："></a>第二步：</h2><p>选最小两个数画出一个树<br><img src="/picture/77.png"><br>用这两个数的和代替这两个数放在数组中：1， 1， 2， 4， 5， 7， 9， 9</p>
-<h2 id="第三步："><a href="#第三步：" class="headerlink" title="第三步："></a>第三步：</h2><p>再选出最小的两个数画树<br><img src="/picture/78.png"><br>再用这两个数的和代替这两个数放在数组中：2， 2， 4， 5， 7， 9， 9</p>
-<h2 id="第四步：再选出最小的两个数画树"><a href="#第四步：再选出最小的两个数画树" class="headerlink" title="第四步：再选出最小的两个数画树"></a>第四步：再选出最小的两个数画树</h2><p><img src="/picture/79.png"><br>然后再排序：4， 4， 5， 7， 9， 9</p>
-<h2 id="第五步："><a href="#第五步：" class="headerlink" title="第五步："></a>第五步：</h2><p>然后再选择最小的两个数画树（注意：如果这两个数其中一个为刚才合成的数，则如果另一个数比它大就放在它的右边，如果比它小就放在它的左边，如果两个数相等，则放哪一边都行）<br><img src="/picture/80.png"><br>这时数组中的数有： 5， 7，8， 9， 9</p>
-<h2 id="第六步："><a href="#第六步：" class="headerlink" title="第六步："></a>第六步：</h2><p>重复上述步骤<br><img src="/picture/81.png"></p>
-<p>这时数组里的数有： 8， 9， 9， 13</p>
-<h2 id="第七步："><a href="#第七步：" class="headerlink" title="第七步："></a>第七步：</h2><p>继续重复上述步骤<br><img src="/picture/82.png"><br>这时数组里的数有：  9， 13， 17</p>
-<h2 id="第八步："><a href="#第八步：" class="headerlink" title="第八步："></a>第八步：</h2><p>继续重复上述步骤<br><img src="/picture/83.png"></p>
-<p>这时数组里的数有：  17， 21</p>
-<h2 id="最后一步："><a href="#最后一步：" class="headerlink" title="最后一步："></a>最后一步：</h2><p>继续重复上述步骤<br><img src="/picture/84.png"></p>
-<p>这样哈弗曼树就画成了（虽然画的不是多好看，但应该能看懂）</p>
+        <p>前言：前几天学了xss攻击，觉得有必要写一篇博客记录一下。</p>
+<p>题目链接：</p>
+<p><a href="http://test.xss.tv" target="_blank" rel="noopener">http://test.xss.tv</a><br><a id="more"></a></p>
+<h2 id="第一关："><a href="#第一关：" class="headerlink" title="第一关："></a>第一关：</h2><pre><code>http://test.xss.tv/level1.php?name=&lt;script&gt;alert(1)&lt;/script&gt;
+</code></pre><p>这一关直接可以触发弹出，没有任何套路</p>
+<h2 id="第二关："><a href="#第二关：" class="headerlink" title="第二关："></a>第二关：</h2><p><img src="/picture/104.png"></p>
+<p><img src="/picture/103.png"></p>
+<p>查看网页源代码发现输入框里的输入的值会在input标签里的value=””里显示出来，所以我们只要先闭合前面的双引号和尖括号并把后面的东西注释掉，再在其中触发弹窗就可以通关</p>
+<pre><code>http://test.xss.tv/level2.php?keyword=&quot;&gt;&lt;script&gt;alert(1)&lt;/script&gt;#
+</code></pre><h2 id="第三关："><a href="#第三关：" class="headerlink" title="第三关："></a>第三关：</h2><p>我们用第二关的思想在输入框里输入</p>
+<pre><code>&apos;&gt;&lt;script&gt;alert(1)&lt;/script&gt;#
+</code></pre><p><img src="/picture/105.png"></p>
+<p>发现并没有什么反应，查看网页源代码后发现&lt; &gt; 都被过滤了<br>所以我们就不能用含有&lt; &gt;的Shallcode，这里我们换一种思路<br>在输入框里输入</p>
+<pre><code>&apos;onclick=&apos;javascript:alert(1)&apos;&apos;
+</code></pre><p><img src="/picture/107.png"></p>
+<p><img src="/picture/108.png"></p>
+<p><strong>注意：</strong>onclick是点击事件，所以要点一下输入框才会有弹窗。</p>
+<h2 id="第四关："><a href="#第四关：" class="headerlink" title="第四关："></a>第四关：</h2><p>按照平常的思路，我们先来看一下网页有没有过滤什么字符，所以我先输入了</p>
+<pre><code>&lt;&gt; &apos; &quot;
+</code></pre><p>查看网页源代码后发现 &lt; &gt;被过滤掉了，我们试一下上一关的思路</p>
+<pre><code>&quot;onclick=&apos;javascript:alert(1)&apos;&quot;
+</code></pre><p><img src="/picture/110.png"></p>
+<p><img src="/picture/111.png"></p>
+<p>然后点一下输入框发现弹窗成功了</p>
+<h2 id="第五关："><a href="#第五关：" class="headerlink" title="第五关："></a>第五关：</h2><p>我们先试一下前几关的思路，发现script和onclick都被过滤了</p>
+<p><img src="/picture/112.png"></p>
+<p><img src="/picture/113.png"></p>
+<p>所以我们还得在换一种方法：<br>在输入框输入</p>
+<pre><code>&quot;&gt;&lt;a href=&apos;javascript:alert(1)&apos;&gt;点这里&lt;/a&gt;#
+</code></pre><p><img src="/picture/114.png"></p>
+<p>这里的#本来是用来注释后面的内容的，但好像没有什么用，不加好像也没有影响，然后点一下“点这里”就可以通关了</p>
+<h2 id="第六关："><a href="#第六关：" class="headerlink" title="第六关："></a>第六关：</h2><p>我们先试一下前几关的思路，发现script，onclick和 href 都被过滤了</p>
+<p><img src="/picture/115.png"></p>
+<p><img src="/picture/116.png"></p>
+<p><img src="/picture/117.png"></p>
+<p>所以我们这里要再换一种思路，这里我们用<strong>大小写绕过</strong>，我们还用上一题的方法，不过要用 E 来代替 e</p>
+<pre><code>&quot;&gt;&lt;a hrEf=&apos;javascript:alert(1)&apos;&gt;点这&lt;/a&gt;#
+</code></pre><p><img src="/picture/118.png"></p>
+<p>然后点“点这”就可以通关了</p>
+<h2 id="第七关："><a href="#第七关：" class="headerlink" title="第七关："></a>第七关：</h2><p>经过一番尝试，发现网页把关键字script，onclick的on和href都过滤没了，所以这里我们另想办法</p>
+<p>这里我们用<strong>双写绕过</strong>，我们还用前面两题的思路，不过要把script替换成scrscriptipt，把 href 换hrhrefef</p>
+<pre><code>&quot;&gt;&lt;a hrhrefef=&apos;javascrscriptipt:alert(1)&apos;&gt;点这&lt;/a&gt;#
+</code></pre><p><img src="/picture/119.png"></p>
+<p>由于网页会过滤掉script和href，所以我们把script替换成scrscriptipt，把 href 换hrhrefef后，经过网页过滤后我们输入的scrscriptipt和hrhrefe就成了script和href，所以我们就达到了我们的目的</p>
+<h2 id="第八关"><a href="#第八关" class="headerlink" title="第八关:"></a>第八关:</h2><p>经过一番尝试，发现尖括号和双引号都被过滤了，script也被过滤了scr_ipt，这里我们用html实体编码绕过，把 r 转换成html实体编码 &amp;#x72 ; 。<br>由于我们输入的东西都会在题目a标签里呈现</p>
+<p><img src="/picture/120.png"></p>
+<p>所以我们只需要在输入框里输入</p>
+<pre><code>javasc&amp;#x72;ipt:alert(1)
+</code></pre><p><img src="/picture/121.png"></p>
+<p>然后点友情链接就可以通关了。</p>
+<h2 id="第九关："><a href="#第九关：" class="headerlink" title="第九关："></a>第九关：</h2><p>这一关与上一关有些相似，也是会把你输入的内容呈现在 a 标签中，不同的是，如果你不加 http:// ，它会显示你输入的链接有问题，而不会显示我们输入的内容。</p>
+<p><img src="/picture/122.png"></p>
+<p>我们在上http://之后就可以知道它把script过滤成了scr_ipt了，我们把 r 换成html实体编码&amp;#x72 ;再输入</p>
+<pre><code>javasc&amp;#x72;ipt:alert(1)//http://
+</code></pre><p><img src="/picture/124.png"></p>
+<p>然后就可以通关了。</p>
+<h2 id="第十关："><a href="#第十关：" class="headerlink" title="第十关："></a>第十关：</h2><p>经过一番分析和尝试后发现尖括号 &lt; &gt; 被过滤了，不过在 from 标签里发现有三个隐藏的输入框。</p>
+<p><img src="/picture/125.png"></p>
+<p>又经过一番尝试后发现只能从最后一个隐藏的输入框入手</p>
+<pre><code>keyword = test&amp;t_sort=&quot;type=&quot;text&quot; onclick = &quot;alert(1)
+</code></pre><p><img src="/picture/126.png"></p>
+<p><img src="/picture/127.png"></p>
+<p>onclick为点击事件，还需要点一下输入框才能触发。</p>
+<h2 id="第十一关"><a href="#第十一关" class="headerlink" title="第十一关"></a>第十一关</h2><p>这一关要进行抓包<br>用burpsuite进行抓包</p>
+<p><img src="/picture/129.png"></p>
+<p>当抓到包以后，手动添加<code>Referer: &quot; onclick=&quot;alert(1) type=&quot;text&quot;</code>进行伪造，然后forword进行发包。</p>
+<p><img src="/picture/130.png"></p>
+<p><img src="/picture/128.png"></p>
+<p>然后触发点击事件就可以了。</p>
+<h2 id="第十二关"><a href="#第十二关" class="headerlink" title="第十二关"></a>第十二关</h2><p>这一关也要抓包，然后构造http头部User-Agent的payload</p>
+<pre><code>User-Agent: &quot;onclick=alert(1) type=&quot;text
+</code></pre><p><img src="/picture/135.png"></p>
+<p>然后forward发包</p>
+<p><img src="/picture/131.png"></p>
+<p><img src="/picture/132.png"></p>
+<p>然后触发点击事件就可以了</p>
+<h2 id="第十三关"><a href="#第十三关" class="headerlink" title="第十三关"></a>第十三关</h2><p>这一关要伪造cookie<br>同样进行抓包，然后修改cookie</p>
+<pre><code>Cookie: user=call+me+maybe%3F onclick=alert(1) type=&quot;text
+</code></pre><p><img src="/picture/136.png"></p>
+<p>然后forward发包</p>
+<p><img src="/picture/133.png"></p>
+<p><img src="/picture/134.png"></p>
+<p>然后触发点击事件就可以了</p>
+<p>后面的就先不打了，等后面有时间再打。</p>
 
       
 
@@ -236,7 +329,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">xss</a>
         		</li>
       		
 		</ul>
@@ -292,7 +385,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/13/画哈弗曼树/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/11/xss挑战之旅学习笔记/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -306,18 +399,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/04/13/数据结构：顺序表/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          数据结构：顺序表
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/04/07/PHP学习笔记（1）/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">PHP学习笔记（1）</div>
+    <a href="/2019/06/10/xss学习总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">xss学习总结</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -344,7 +428,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一步："><span class="toc-number">1.</span> <span class="toc-text">第一步：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二步："><span class="toc-number">2.</span> <span class="toc-text">第二步：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三步："><span class="toc-number">3.</span> <span class="toc-text">第三步：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第四步：再选出最小的两个数画树"><span class="toc-number">4.</span> <span class="toc-text">第四步：再选出最小的两个数画树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第五步："><span class="toc-number">5.</span> <span class="toc-text">第五步：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第六步："><span class="toc-number">6.</span> <span class="toc-text">第六步：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第七步："><span class="toc-number">7.</span> <span class="toc-text">第七步：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第八步："><span class="toc-number">8.</span> <span class="toc-text">第八步：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最后一步："><span class="toc-number">9.</span> <span class="toc-text">最后一步：</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一关："><span class="toc-number">1.</span> <span class="toc-text">第一关：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二关："><span class="toc-number">2.</span> <span class="toc-text">第二关：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三关："><span class="toc-number">3.</span> <span class="toc-text">第三关：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第四关："><span class="toc-number">4.</span> <span class="toc-text">第四关：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第五关："><span class="toc-number">5.</span> <span class="toc-text">第五关：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第六关："><span class="toc-number">6.</span> <span class="toc-text">第六关：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第七关："><span class="toc-number">7.</span> <span class="toc-text">第七关：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第八关"><span class="toc-number">8.</span> <span class="toc-text">第八关:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第九关："><span class="toc-number">9.</span> <span class="toc-text">第九关：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第十关："><span class="toc-number">10.</span> <span class="toc-text">第十关：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第十一关"><span class="toc-number">11.</span> <span class="toc-text">第十一关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第十二关"><span class="toc-number">12.</span> <span class="toc-text">第十二关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第十三关"><span class="toc-number">13.</span> <span class="toc-text">第十三关</span></a></li></ol>
                     </div>
                 </span>
             </div>

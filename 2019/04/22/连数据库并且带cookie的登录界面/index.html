@@ -6,14 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>连数据库并且带cookie的登录界面 | Obsetion</title>
+  <title>连数据库并且带cookie的登录界面 | 绿树成阴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="前言：前几天接到任务，让在几天之内写出一个登录界面，要连数据库并且带cookie的那种，接到任务时一脸懵，但还是在几天内还是赶了出来。废话不多说了，接下来给大家展示一下我那漏洞百出的代码。">
 <meta name="keywords" content="PHP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="连数据库并且带cookie的登录界面">
 <meta property="og:url" content="http://yoursite.com/2019/04/22/连数据库并且带cookie的登录界面/index.html">
-<meta property="og:site_name" content="Obsetion">
+<meta property="og:site_name" content="绿树成阴">
 <meta property="og:description" content="前言：前几天接到任务，让在几天之内写出一个登录界面，要连数据库并且带cookie的那种，接到任务时一脸懵，但还是在几天内还是赶了出来。废话不多说了，接下来给大家展示一下我那漏洞百出的代码。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/picture/85.png">
@@ -24,7 +24,7 @@
 <meta name="twitter:description" content="前言：前几天接到任务，让在几天之内写出一个登录界面，要连数据库并且带cookie的那种，接到任务时一脸懵，但还是在几天内还是赶了出来。废话不多说了，接下来给大家展示一下我那漏洞百出的代码。">
 <meta name="twitter:image" content="http://yoursite.com/picture/85.png">
   
-    <link rel="alternative" href="/atom.xml" title="Obsetion" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="绿树成阴" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -57,7 +57,7 @@
 		  <h1 class="header-author"><a href="/">Obsetear</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">Obseter&#39;s Blog</p>
+		<p class="header-subtitle">放手一搏</p>
 		
 
 		<nav class="header-menu">
@@ -117,7 +117,7 @@
 			  <h1 class="header-author js-header-author">Obsetear</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Obseter&#39;s Blog<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>放手一搏<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -706,6 +706,22 @@ if(isset($_COOKIE[&apos;name&apos;])&amp;&amp;$b&gt;0)
   
 
   
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2019/04/22/连数据库并且带cookie的登录界面/",
+  owner: 'Obsetear',
+  repo: 'https://obsetear.github.io',
+  oauth: {
+    client_id: '339e480a6a37bb5006e3',
+    client_secret: '6585ae428ad612134fff1866f22f1c979b940d8e',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -736,7 +752,7 @@ if(isset($_COOKIE[&apos;name&apos;])&amp;&amp;$b&gt;0)
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -798,15 +814,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ctf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">总结</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -814,15 +822,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ctf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color4">xss</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">xss</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -883,41 +899,13 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-friends" q-show="friends">
   		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
-        </ul>
-  		
     	</section>
     
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">一个小白记录自己学习过程的网站</div>
   	  	
     	</section>
     

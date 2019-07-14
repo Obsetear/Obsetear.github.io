@@ -6,20 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>数据结构：顺序表 | 绿树成阴</title>
+  <title>绿树成阴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="顺序表的基本操作#include &amp;lt;iostream&amp;gt; #include &amp;lt;stdlib.h&amp;gt; #define ElemType int #define maxsize 100">
-<meta name="keywords" content="数据结构">
-<meta property="og:type" content="article">
-<meta property="og:title" content="数据结构：顺序表">
-<meta property="og:url" content="http://yoursite.com/2019/04/13/数据结构：顺序表/index.html">
+  <meta name="description" content="一个小白学习记录">
+<meta property="og:type" content="website">
+<meta property="og:title" content="绿树成阴">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
 <meta property="og:site_name" content="绿树成阴">
-<meta property="og:description" content="顺序表的基本操作#include &amp;lt;iostream&amp;gt; #include &amp;lt;stdlib.h&amp;gt; #define ElemType int #define maxsize 100">
+<meta property="og:description" content="一个小白学习记录">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-16T09:41:00.385Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据结构：顺序表">
-<meta name="twitter:description" content="顺序表的基本操作#include &amp;lt;iostream&amp;gt; #include &amp;lt;stdlib.h&amp;gt; #define ElemType int #define maxsize 100">
+<meta name="twitter:title" content="绿树成阴">
+<meta name="twitter:description" content="一个小白学习记录">
   
     <link rel="alternative" href="/atom.xml" title="绿树成阴" type="application/atom+xml">
   
@@ -159,187 +157,40 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-数据结构：顺序表" class="article article-type-post " itemscope itemprop="blogPost">
+            
+  
+    <article id="post-用hexo搭建个人博客总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      数据结构：顺序表
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/18/用hexo搭建个人博客总结/">用hexo搭建个人博客总结</a>
     </h1>
   
 
 
         
         
-        <!-- 不蒜子统计 -->
-        <span id="busuanzi_container_page_pv" style="display:none" class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
 
-
-<a href="/2019/04/13/数据结构：顺序表/" class="archive-article-date">
-  	<time datetime="2019-04-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-13</time>
+<a href="/2019/03/18/用hexo搭建个人博客总结/" class="archive-article-date">
+  	<time datetime="2019-03-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="顺序表的基本操作"><a href="#顺序表的基本操作" class="headerlink" title="顺序表的基本操作"></a>顺序表的基本操作</h2><pre><code>#include &lt;iostream&gt;
-#include &lt;stdlib.h&gt;
-#define ElemType int
-#define maxsize 100
-</code></pre><a id="more"></a>
-<pre><code>using namespace std;
-typedef struct
-{
-    ElemType data[maxsize];
-    int Length;
-}SqList;
-void InitSeqList(SqList &amp; L)//初始化顺序表
-{
-    for(int i=0;i&lt;maxsize;i++)
-    {
-        L.data[i]=0;
-    }
-    L.Length=0;
-}
-void DisplayList(SqList L)//输出顺序表
-{
-    cout&lt;&lt;&quot;顺序表中的数据有：&quot;;
-    for(int i=0;i&lt;L.Length;i++)
-    {
-        cout&lt;&lt;L.data[i]&lt;&lt;&quot; &quot;;
-    }
-    cout&lt;&lt;endl;
-}
-int LocateElem(SqList L,ElemType e)
-{
-    int i=0;
-    while(i&lt;L.Length&amp;&amp;L.data[i]!=e)
-    {i++;}
-}
-
-void InsertElem(SqList &amp;L,int pos,ElemType e)//插入数据元素
-{
-    if(pos&lt;0||pos&gt;L.Length+1)
-    {
-        cout &lt;&lt;&quot;位置不合法！&quot;;
-    }
-    else
-    {
-        for(int i=L.Length-1;i&gt;=pos-1;i--)
-        {
-            L.data[i+1]=L.data[i];
-        }
-        L.data[pos-1]=e;
-
-        L.Length++;
-    }
-}
-void DestroyList(SqList *&amp;L)//摧毁顺序表
-{
-    free(L);
-}
-void searchElem(SqList &amp;L,ElemType e)
-{
-    int i=0;
-    while(i&lt;L.Length&amp;&amp;L.data[i]!=e)
-        i++;
-    if(i&gt;=L.Length)
-        cout&lt;&lt;&quot;没有找到该元素&quot;&lt;&lt;endl;
-    else
-        cout&lt;&lt;&quot;要找的元素在&quot;&lt;&lt;i+1&lt;&lt;&quot;位&quot;&lt;&lt;endl;
-}
-void LisDelete(SqList &amp;L,int i)//删除数据元素
-{
-    int j;
-    if(i&lt;1||i&gt;L.Length)
-           cout&lt;&lt;&quot;该元素不在该顺序表中&quot;&lt;&lt;endl;
-    i--;
-    for(j=i;j&lt;L.Length-1;j++)
-        {L.data[j]=L.data[j+1];}
-    L.Length--;
-    cout&lt;&lt;&quot;已成功删除目标元素&quot;&lt;&lt;endl;
-}
-int main()
-{
-    SqList s;
-    InitSeqList(s);
-    int a[100],n;
-    cout&lt;&lt;&quot;你想顺序表中有多少个元素&quot;&lt;&lt;endl;
-    cin&gt;&gt;n;
-    cout&lt;&lt;&quot;请输入顺序表中的&quot;&lt;&lt;n&lt;&lt;&quot;个元素&quot;&lt;&lt;endl;
-    for(int i=0;i&lt;n;i++)
-    {
-        cin&gt;&gt;a[i];
-        InsertElem(s,i+1,a[i]);
-    }
-//    for(int i=0;i&lt;5;i++)
-//    {
-//        InsertElem(s,i+1,i+5);
-//    }
-    DisplayList(s);
-    int t,d;
-    cout&lt;&lt;&quot;请先输入你想要找插入的位置，再输入要插入的元素&quot;&lt;&lt;endl;
-    cin&gt;&gt;t&gt;&gt;d;
-    InsertElem(s,t,d);
-    //InsertElem(s,5,4);
-    DisplayList(s);
-    int e;
-    cout&lt;&lt;&quot;请输入你想要找的元素&quot;&lt;&lt;endl;
-    cin&gt;&gt;e;
-    searchElem(s,e);
-//    searchElem(s,2);
-    DisplayList(s);
-    int h;
-    cout&lt;&lt;&quot;请输入你想要删除的元素所在的位置&quot;&lt;&lt;endl;
-    cin&gt;&gt;h;
-    LisDelete(s,h);
-//    LisDelete(s,3);
-    DisplayList(s);
-    return 0;
-}
-
-```
-</code></pre>
+        <p></p><h1>用hexo搭建个人博客总结</h1><p></p>
+<body><br><h2>一、准备工作</h2><br><p style="color:red">准备工作分为四部分：  安装nodejs、  安装git for Windows、  安装Sublime Text 3 </p><br>
+        
+          <a class="article-more-a" href="/2019/03/18/用hexo搭建个人博客总结/#more">more >></a>
+        
       
 
       
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/4.png">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/6.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
+    </body></div>
     <div class="article-info article-info-index">
       
       
@@ -348,7 +199,7 @@ int main()
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
         		</li>
       		
 		</ul>
@@ -357,84 +208,16 @@ int main()
       
 
       
-
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/18/用hexo搭建个人博客总结/">展开全文 >></a>
+        </p>
       
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/13/数据结构：顺序表/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/04/15/PHP学习笔记（2）/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          PHP学习笔记（2）
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/04/13/数据结构：单链表/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">数据结构：单链表</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -449,48 +232,17 @@ int main()
         </div>
         
         
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#顺序表的基本操作"><span class="toc-number">1.</span> <span class="toc-text">顺序表的基本操作</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
     </div>
 </aside>
 
 
 
-  
-  
-  
 
   
-
   
-
-  
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
-<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
-<script>
-var gitment = new Gitment({
-  id: "http://yoursite.com/2019/04/13/数据结构：顺序表/",
-  owner: 'obsetear',
-  repo: 'obsetear.github.io',
-  oauth: {
-    client_id: '4adf5aea4e0d3391e923',
-    client_secret: 'd7ddd2640762a8790db759e138b0e80b44f16c62',
-  },
-})
-gitment.render('gitment-ctn')
-</script>
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    </nav>
   
 
 
@@ -526,8 +278,8 @@ gitment.render('gitment-ctn')
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

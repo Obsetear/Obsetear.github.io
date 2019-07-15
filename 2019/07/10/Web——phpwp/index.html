@@ -6,20 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>数据结构：顺序表 | 绿树成阴</title>
+  <title>Web——phpwp | 绿树成阴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="顺序表的基本操作#include &amp;lt;iostream&amp;gt; #include &amp;lt;stdlib.h&amp;gt; #define ElemType int #define maxsize 100">
-<meta name="keywords" content="数据结构">
+  <meta name="description" content="前言：这道题我本来不想写wp的，但里面有一个坑，特写此篇博客来记录一下。">
+<meta name="keywords" content="wp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构：顺序表">
-<meta property="og:url" content="http://yoursite.com/2019/04/13/数据结构：顺序表/index.html">
+<meta property="og:title" content="Web——phpwp">
+<meta property="og:url" content="http://yoursite.com/2019/07/10/Web——phpwp/index.html">
 <meta property="og:site_name" content="绿树成阴">
-<meta property="og:description" content="顺序表的基本操作#include &amp;lt;iostream&amp;gt; #include &amp;lt;stdlib.h&amp;gt; #define ElemType int #define maxsize 100">
+<meta property="og:description" content="前言：这道题我本来不想写wp的，但里面有一个坑，特写此篇博客来记录一下。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-16T09:41:00.385Z">
+<meta property="og:image" content="http://yoursite.com/wp/php.png">
+<meta property="og:image" content="http://yoursite.com/wp/8.png">
+<meta property="og:image" content="http://yoursite.com/wp/9.png">
+<meta property="og:image" content="http://yoursite.com/wp/10.png">
+<meta property="og:image" content="http://yoursite.com/wp/11.png">
+<meta property="og:image" content="http://yoursite.com/wp/12.png">
+<meta property="og:updated_time" content="2019-07-15T01:51:41.611Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据结构：顺序表">
-<meta name="twitter:description" content="顺序表的基本操作#include &amp;lt;iostream&amp;gt; #include &amp;lt;stdlib.h&amp;gt; #define ElemType int #define maxsize 100">
+<meta name="twitter:title" content="Web——phpwp">
+<meta name="twitter:description" content="前言：这道题我本来不想写wp的，但里面有一个坑，特写此篇博客来记录一下。">
+<meta name="twitter:image" content="http://yoursite.com/wp/php.png">
   
     <link rel="alternative" href="/atom.xml" title="绿树成阴" type="application/atom+xml">
   
@@ -159,14 +166,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-数据结构：顺序表" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Web——phpwp" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      数据结构：顺序表
+      Web——phpwp
     </h1>
   
 
@@ -179,132 +186,46 @@
         </span>
 
 
-<a href="/2019/04/13/数据结构：顺序表/" class="archive-article-date">
-  	<time datetime="2019-04-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-13</time>
+<a href="/2019/07/10/Web——phpwp/" class="archive-article-date">
+  	<time datetime="2019-07-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="顺序表的基本操作"><a href="#顺序表的基本操作" class="headerlink" title="顺序表的基本操作"></a>顺序表的基本操作</h2><pre><code>#include &lt;iostream&gt;
-#include &lt;stdlib.h&gt;
-#define ElemType int
-#define maxsize 100
-</code></pre><a id="more"></a>
-<pre><code>using namespace std;
-typedef struct
-{
-    ElemType data[maxsize];
-    int Length;
-}SqList;
-void InitSeqList(SqList &amp; L)//初始化顺序表
-{
-    for(int i=0;i&lt;maxsize;i++)
-    {
-        L.data[i]=0;
-    }
-    L.Length=0;
-}
-void DisplayList(SqList L)//输出顺序表
-{
-    cout&lt;&lt;&quot;顺序表中的数据有：&quot;;
-    for(int i=0;i&lt;L.Length;i++)
-    {
-        cout&lt;&lt;L.data[i]&lt;&lt;&quot; &quot;;
-    }
-    cout&lt;&lt;endl;
-}
-int LocateElem(SqList L,ElemType e)
-{
-    int i=0;
-    while(i&lt;L.Length&amp;&amp;L.data[i]!=e)
-    {i++;}
-}
+        <p><strong>前言</strong>：这道题我本来不想写wp的，但里面有一个坑，特写此篇博客来记录一下。<br><a id="more"></a></p>
+<p>题目来源：实验吧</p>
+<p>题目描述：</p>
+<p><img src="/wp/php.png"></p>
+<p>根据题目描述，应该有一个index.php.txt文件，访问该文件</p>
+<p><img src="/wp/8.png"></p>
+<p>根据提供的信息可以看出这应该是index.php文件里的php源码，只要绕过这些过滤就可以得到flag。</p>
+<p>在解析题目之前先让我们了解一下两个函数：</p>
+<pre><code>int eregi(string pattern, string string, array [regs]);
 
-void InsertElem(SqList &amp;L,int pos,ElemType e)//插入数据元素
-{
-    if(pos&lt;0||pos&gt;L.Length+1)
-    {
-        cout &lt;&lt;&quot;位置不合法！&quot;;
-    }
-    else
-    {
-        for(int i=L.Length-1;i&gt;=pos-1;i--)
-        {
-            L.data[i+1]=L.data[i];
-        }
-        L.data[pos-1]=e;
+eregi()函数在一个字符串搜索指定的模式的字符串。搜索不区分大小写。
 
-        L.Length++;
-    }
-}
-void DestroyList(SqList *&amp;L)//摧毁顺序表
-{
-    free(L);
-}
-void searchElem(SqList &amp;L,ElemType e)
-{
-    int i=0;
-    while(i&lt;L.Length&amp;&amp;L.data[i]!=e)
-        i++;
-    if(i&gt;=L.Length)
-        cout&lt;&lt;&quot;没有找到该元素&quot;&lt;&lt;endl;
-    else
-        cout&lt;&lt;&quot;要找的元素在&quot;&lt;&lt;i+1&lt;&lt;&quot;位&quot;&lt;&lt;endl;
-}
-void LisDelete(SqList &amp;L,int i)//删除数据元素
-{
-    int j;
-    if(i&lt;1||i&gt;L.Length)
-           cout&lt;&lt;&quot;该元素不在该顺序表中&quot;&lt;&lt;endl;
-    i--;
-    for(j=i;j&lt;L.Length-1;j++)
-        {L.data[j]=L.data[j+1];}
-    L.Length--;
-    cout&lt;&lt;&quot;已成功删除目标元素&quot;&lt;&lt;endl;
-}
-int main()
-{
-    SqList s;
-    InitSeqList(s);
-    int a[100],n;
-    cout&lt;&lt;&quot;你想顺序表中有多少个元素&quot;&lt;&lt;endl;
-    cin&gt;&gt;n;
-    cout&lt;&lt;&quot;请输入顺序表中的&quot;&lt;&lt;n&lt;&lt;&quot;个元素&quot;&lt;&lt;endl;
-    for(int i=0;i&lt;n;i++)
-    {
-        cin&gt;&gt;a[i];
-        InsertElem(s,i+1,a[i]);
-    }
-//    for(int i=0;i&lt;5;i++)
-//    {
-//        InsertElem(s,i+1,i+5);
-//    }
-    DisplayList(s);
-    int t,d;
-    cout&lt;&lt;&quot;请先输入你想要找插入的位置，再输入要插入的元素&quot;&lt;&lt;endl;
-    cin&gt;&gt;t&gt;&gt;d;
-    InsertElem(s,t,d);
-    //InsertElem(s,5,4);
-    DisplayList(s);
-    int e;
-    cout&lt;&lt;&quot;请输入你想要找的元素&quot;&lt;&lt;endl;
-    cin&gt;&gt;e;
-    searchElem(s,e);
-//    searchElem(s,2);
-    DisplayList(s);
-    int h;
-    cout&lt;&lt;&quot;请输入你想要删除的元素所在的位置&quot;&lt;&lt;endl;
-    cin&gt;&gt;h;
-    LisDelete(s,h);
-//    LisDelete(s,3);
-    DisplayList(s);
-    return 0;
-}
+与其相似的函数ereg()则区分大小写、
 
-```
-</code></pre>
+eregi(&quot;hackerDJ&quot;,$_GET[id])的意思是如果传进来的id中有&quot;hackerDJ&quot;则返回true，
+
+否则返回false
+
+urldecode()解码：还原 URL 编码字符串。
+</code></pre><p>所以根据题目中的这两个函数可以很容易的想到用把”hackerDJ”转换成URL编码，从而绕过eregi()函数，然后再被urldecode()函数</p>
+<p>解码通过第二个判断语句，最后输出flag。由于我们传入的 id 会被浏览器进行一次URL解码，所以我们要对id进行两次URL编码。</p>
+<p>注意：这里有个坑，你要是用线上的工具进行编码就会发现，线上的工具根本没用，所以要用线下的工具编。</p>
+<p>线上工具编码效果：</p>
+<p><img src="/wp/9.png"></p>
+<p>线下工具编码效果：</p>
+<p><img src="/wp/10.png"></p>
+<p><img src="/wp/11.png"></p>
+<p>最后在index.php网页输入</p>
+<pre><code>?id=%25%36%38%25%36%31%25%36%33%25%36%42%25%36%35%25%37%32%25%34%34%25%34%41
+</code></pre><p>就可以得到flag</p>
+<p><img src="/wp/12.png"></p>
+
       
 
       
@@ -348,7 +269,7 @@ int main()
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">wp</a>
         		</li>
       		
 		</ul>
@@ -404,7 +325,7 @@ int main()
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/13/数据结构：顺序表/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/10/Web——phpwp/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -418,18 +339,18 @@ int main()
   
 <nav id="article-nav">
   
-    <a href="/2019/04/13/画哈弗曼树/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/07/14/Web——爆破wp/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          画哈夫曼树
+          Web——爆破wp
         
       </div>
     </a>
   
   
-    <a href="/2019/04/07/PHP学习笔记（1）/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">PHP学习笔记（1）</div>
+    <a href="/2019/07/08/图片隐写——小苹果wp/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Misc——小苹果wp</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -456,7 +377,7 @@ int main()
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#顺序表的基本操作"><span class="toc-number">1.</span> <span class="toc-text">顺序表的基本操作</span></a></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
@@ -472,7 +393,7 @@ int main()
   
 
   
-  <div id="SOHUCS" sid="数据结构：顺序表"></div> 
+  <div id="SOHUCS" sid="Web——phpwp"></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js"></script>
 <script type="text/javascript">
     window.changyan.api.config({

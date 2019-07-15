@@ -16,24 +16,24 @@
 <meta property="og:site_name" content="绿树成阴">
 <meta property="og:description" content="前言：经过近一个月的努力，终于通过看孙胜利的视频把小清新bbs系统给开发出来了，可以说这一个月是我最忙也是最充实的一个月了。在这一个月的学习中，我感悟颇深。不多说了，下面我把开发思路简单的说一下。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/bbs/1.png">
-<meta property="og:image" content="http://yoursite.com/bbs/14.png">
-<meta property="og:image" content="http://yoursite.com/bbs/2.png">
-<meta property="og:image" content="http://yoursite.com/bbs/15.png">
-<meta property="og:image" content="http://yoursite.com/bbs/4.png">
-<meta property="og:image" content="http://yoursite.com/bbs/5.png">
-<meta property="og:image" content="http://yoursite.com/bbs/6.png">
-<meta property="og:image" content="http://yoursite.com/bbs/7.png">
-<meta property="og:image" content="http://yoursite.com/bbs/8.png">
-<meta property="og:image" content="http://yoursite.com/bbs/9.png">
-<meta property="og:image" content="http://yoursite.com/bbs/10.png">
-<meta property="og:image" content="http://yoursite.com/bbs/12.png">
-<meta property="og:image" content="http://yoursite.com/bbs/13.png">
-<meta property="og:updated_time" content="2019-06-04T12:36:48.332Z">
+<meta property="og:image" content="http://yoursite.com/bbs%20sqli/1.png">
+<meta property="og:image" content="http://yoursite.com/bbs%20sqli/14.png">
+<meta property="og:image" content="http://yoursite.com/bbs%20sqli/2.png">
+<meta property="og:image" content="http://yoursite.com/bbs%20sqli/15.png">
+<meta property="og:image" content="http://yoursite.com/bbs%20sqli/4.png">
+<meta property="og:image" content="http://yoursite.com/bbs%20sqli/5.png">
+<meta property="og:image" content="http://yoursite.com/bbs%20sqli/6.png">
+<meta property="og:image" content="http://yoursite.com/bbs%20sqli/7.png">
+<meta property="og:image" content="http://yoursite.com/bbs%20sqli/8.png">
+<meta property="og:image" content="http://yoursite.com/bbs%20sqli/9.png">
+<meta property="og:image" content="http://yoursite.com/bbs%20sqli/10.png">
+<meta property="og:image" content="http://yoursite.com/bbs%20sqli/12.png">
+<meta property="og:image" content="http://yoursite.com/bbs%20sqli/13.png">
+<meta property="og:updated_time" content="2019-07-15T01:43:47.233Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="bbs项目开发感悟">
 <meta name="twitter:description" content="前言：经过近一个月的努力，终于通过看孙胜利的视频把小清新bbs系统给开发出来了，可以说这一个月是我最忙也是最充实的一个月了。在这一个月的学习中，我感悟颇深。不多说了，下面我把开发思路简单的说一下。">
-<meta name="twitter:image" content="http://yoursite.com/bbs/1.png">
+<meta name="twitter:image" content="http://yoursite.com/bbs%20sqli/1.png">
   
     <link rel="alternative" href="/atom.xml" title="绿树成阴" type="application/atom+xml">
   
@@ -203,44 +203,44 @@
       
         <p><strong>前言</strong>：经过近一个月的努力，终于通过看孙胜利的视频把小清新bbs系统给开发出来了，可以说这一个月是我最忙也是最充实的一个月了。在这一个月的学习中，我感悟颇深。不多说了，下面我把开发思路简单的说一下。<br><a id="more"></a><br>这个系统在功能方面主要分为两大部分：管理员操作的后台界面和用户操作的前台界面。</p>
 <p>后台界面：</p>
-<p><img src="/bbs/1.png"></p>
+<p><img src="/bbs sqli/1.png"></p>
 <p>相关文件：</p>
-<p><img src="/bbs/14.png"></p>
+<p><img src="/bbs sqli/14.png"></p>
 <p>前台界面：</p>
-<p><img src="/bbs/2.png"></p>
+<p><img src="/bbs sqli/2.png"></p>
 <p>相关文件：</p>
-<p><img src="/bbs/15.png"></p>
+<p><img src="/bbs sqli/15.png"></p>
 <p>在前台，用户可以在不登录的状态下浏览帖子，但要想发帖子和回复帖子必须要登录才行。</p>
-<p><img src="/bbs/4.png"></p>
+<p><img src="/bbs sqli/4.png"></p>
 <p>这里的管理员分为两种，超级管理员和普通管理员，超级管理员有着普通管理员没有的权限，比如，超级管理员有着添加和删除管理员的功能，而普通管理员却没有。不过只要是管理员都有管理帖子的权限。</p>
 <p>不过看了孙胜利写的代码，我觉得有的地方有点问题，下面给大家说一下这些问题及解决方法。</p>
 <p>在管理员操作界面中的子版块列表中，有几个操作链接：访问，编辑和删除。</p>
-<p><img src="/bbs/5.png"></p>
+<p><img src="/bbs sqli/5.png"></p>
 <p>在删除这个功能中孙老师写的代码其实是有些小问题的，下面是孙老师的源码</p>
-<p><img src="/bbs/6.png"></p>
+<p><img src="/bbs sqli/6.png"></p>
 <p>其中删除子版块的操作只有</p>
 <pre><code>$query=&quot;delete from sfk_son_module where id={$_GET[&apos;id&apos;]}&quot;;
 execute($link,$query);
 </code></pre><p>也就是说这个命令执行后只删除了子版块，而子版块下的帖子和帖子相关的回复并没有被删除，即使这些内容以后也不会被访问到，但他们在数据库里除了占用资源外没有任何用处。</p>
 <p>我的解决方法如下：<br>根据传来要删除的子版块的ID，来查一下数据库中存储帖子的表（我的表名为content）和存储回复的表（我的表名为reply），看看里面有没有与此子版块相关的帖子和回复，如果有就将其删除。</p>
-<p><img src="/bbs/7.png"></p>
+<p><img src="/bbs sqli/7.png"></p>
 <p>（这是我的数据库列表，sm为存储子版块的表，红线框起来的使我们要操作的数据库）</p>
-<p><img src="/bbs/8.png"></p>
+<p><img src="/bbs sqli/8.png"></p>
 <p>我的解决方法就是：<br>我们先看看<code>content表</code>里有没有与该子版块相关的帖子，如果有<code>$data</code>就不为空，就会执行第一个<code>if语句</code>，不然就直接执行删除子版块的语句，第一个<code>if语句</code>中进一步判断<code>reply表</code>里有没有与帖子相关的回复，如果有<code>$da</code>就不为空，就会执行第二个<code>if语句</code>，不然就直接执行删除<code>content表</code>中相关帖子的语句，第二个<code>if语句</code>里的作用是删除<code>reply表</code>中与之相关的回复，反正无论怎样，最后都会删除传过来的ID对应的子版块。</p>
 <p>但我的这段代码虽然达到了我们要实现的效果，但好像并不是很完善，应该还有些<code>bug</code>，以后再慢慢完善吧。</p>
 <p>除此之外，我还补充了一个孙胜利之前有提到但没有实现的功能——用户列表</p>
-<p><img src="/bbs/9.png"></p>
+<p><img src="/bbs sqli/9.png"></p>
 <p>在这个界面可以对用户进行修改用户名、密码和删除用户的操作，还可以添加新用户，更厉害的是还可以将用户设置成管理员！</p>
 <p><strong>不过删除操作和设置管理员的操作需要超级管理员的权限。</strong></p>
 <p>修改用户名和密码：</p>
-<p><img src="/bbs/10.png"></p>
+<p><img src="/bbs sqli/10.png"></p>
 <p>添加用户：</p>
-<p><img src="/bbs/12.png"></p>
+<p><img src="/bbs sqli/12.png"></p>
 <p>代码如下：</p>
 <p>用户列表的源代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">include_once &apos;../inc/config.php&apos;;</span><br><span class="line">include_once &apos;../inc/mysql.php&apos;;</span><br><span class="line">include_once &apos;../inc/tool.php&apos;;</span><br><span class="line">$link=connect();</span><br><span class="line">include_once &apos;inc/adminlogin.php&apos;;</span><br><span class="line">$title[&apos;title&apos;]=&apos;用户列表页&apos;;</span><br><span class="line">?&gt;</span><br><span class="line">&lt;?php include &apos;inc/head.php&apos;?&gt;</span><br><span class="line">&lt;div id=&quot;main&quot;&gt;</span><br><span class="line">	&lt;div class=&quot;title&quot;&gt;用户列表&lt;/div&gt;</span><br><span class="line">	&lt;table class=&quot;list&quot;&gt;</span><br><span class="line">		&lt;tr&gt;</span><br><span class="line">			&lt;th&gt;ID&lt;/th&gt;</span><br><span class="line">			&lt;th&gt;名称&lt;/th&gt;</span><br><span class="line">			&lt;th&gt;操作1&lt;/th&gt;	 	 	</span><br><span class="line">			&lt;th&gt;操作2&lt;/th&gt;</span><br><span class="line">		&lt;/tr&gt;</span><br><span class="line">		&lt;?php </span><br><span class="line">		$query=&quot;select * from vip&quot;;</span><br><span class="line">		$result=exe($link,$query);</span><br><span class="line">		while ($data=mysqli_fetch_array($result))&#123;</span><br><span class="line">			</span><br><span class="line">			$url=urlencode(&quot;vipdel.php?id=&#123;$data[&apos;id&apos;]&#125;&quot;);</span><br><span class="line">			$return_url=urlencode($_SERVER[&apos;REQUEST_URI&apos;]);</span><br><span class="line">			$message=&quot;你真的要删除用户 &#123;$data[&apos;name&apos;]&#125; 吗？&quot;;</span><br><span class="line">			$deurl=&quot;com.php?url=&#123;$url&#125;&amp;return_url=&#123;$return_url&#125;&amp;message=&#123;$message&#125;&quot;;</span><br><span class="line">			</span><br><span class="line">$html=&lt;&lt;&lt;A</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;td&gt;id:&#123;$data[&apos;id&apos;]&#125;&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;&#123;$data[&apos;name&apos;]&#125;&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;&lt;a href=&quot;vipupdate.php?id=&#123;$data[&apos;id&apos;]&#125;&quot;&gt;[修改]&lt;/a&gt;&lt;/td&gt; </span><br><span class="line">				&lt;td&gt;&lt;a href=&quot;&#123;$deurl&#125;&quot;&gt;[删除]&lt;/a&gt;&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">A;</span><br><span class="line">			echo $html;</span><br><span class="line">		&#125;</span><br><span class="line">		?&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">	&lt;/table&gt;</span><br><span class="line">	&lt;a href=&quot;vipadd.php&quot;&gt;&lt;input style=&quot;margin-top:20px; margin-left: 16%;&quot; class=&quot;btn&quot; type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;添加用户&quot; /&gt;&lt;/a&gt;</span><br><span class="line">&lt;?php include &apos;inc/foot.php&apos;?&gt;</span><br></pre></td></tr></table></figure>
 <p>设置管理员的核心代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">if(!isset($_GET[&apos;id&apos;]) || !is_numeric($_GET[&apos;id&apos;]))</span><br><span class="line">&#123;</span><br><span class="line">	alert(&apos;id参数错误！&apos;,&apos;vipshow.php&apos;);</span><br><span class="line">&#125;</span><br><span class="line">$query=&quot;select * from vip where id=&#123;$_GET[&apos;id&apos;]&#125;&quot;;</span><br><span class="line">$result=exe($link,$query);</span><br><span class="line">$data=mysqli_fetch_assoc($result);</span><br><span class="line"></span><br><span class="line">$query=&quot;select * from admin where name=&apos;&#123;$data[&apos;name&apos;]&#125;&apos;&quot;;</span><br><span class="line">$result=exe($link,$query);</span><br><span class="line">if(mysqli_num_rows($result))</span><br><span class="line">&#123;</span><br><span class="line">	alert(&apos;这个这个用户已经是管理员了，请不要重复设置！&apos;,&apos;vipadmin.php&apos;);</span><br><span class="line">&#125;</span><br><span class="line">$query=&quot;insert into admin(name,pw,ctime,level) values(&apos;&#123;$data[&apos;name&apos;]&#125;&apos;,&apos;&#123;$data[&apos;pw&apos;]&#125;&apos;,now(),&#123;$_GET[&apos;id2&apos;]&#125;)&quot;;</span><br><span class="line">exe($link,$query);</span><br><span class="line">if(mysqli_affected_rows($link)==1)</span><br><span class="line">&#123;</span><br><span class="line">	alert(&apos;恭喜你，设置成功！&apos;,&apos;vipshow.php&apos;);</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">	alert(&apos;对不起，设置失败，请重试！&apos;,&apos;vipshow.php&apos;);</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
-<p><img src="/bbs/13.png"></p>
+<p><img src="/bbs sqli/13.png"></p>
 <p>与用户操作的代码一共就有怎么多，我就不一一展示了。</p>
 
       
@@ -529,10 +529,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ctf</a>
               </li>
              
@@ -545,7 +541,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -553,11 +549,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color4">xss</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">xss</a>
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">

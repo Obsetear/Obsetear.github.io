@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
@@ -28,7 +29,7 @@
   <style type="text/css">
   
     #container.show {
-      background: linear-gradient(200deg,#a0cfe4,#e8c37e);
+      background: url(/img/8.jpg) no-repeat 100% ; background-size:cover;;
     }
   </style>
   
@@ -40,9 +41,9 @@
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
-    <div class="left-col" q-class="show:isShow">
+    <div class="left-col" q-class="show:isShow" style="background: #fff">
       
-<div class="overlay" style="background: #0af"></div>
+<div class="overlay" style="background: rgba(0,0,0,0)"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -99,7 +100,7 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #0af"></div>
+  	<div class="overlay js-overlay" style="background: rgba(0,0,0,0)"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -400,14 +401,14 @@
 
 
   
-    <article id="post-画哈弗曼树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-数据结构：顺序表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/13/画哈弗曼树/">画哈夫曼树</a>
+      <a class="article-title" href="/2019/04/13/数据结构：顺序表/">数据结构：顺序表</a>
     </h1>
   
 
@@ -415,7 +416,7 @@
         
         
 
-<a href="/2019/04/13/画哈弗曼树/" class="archive-article-date">
+<a href="/2019/04/13/数据结构：顺序表/" class="archive-article-date">
   	<time datetime="2019-04-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-13</time>
 </a>
         
@@ -423,15 +424,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>哈弗曼树又称最优二叉树，是一类带权路径长度最短的树，其画法如下：</p>
-<p>已知一组数字：4，9，1，5，1，7，9，1，1<br>
+        <h2 id="顺序表的基本操作"><a href="#顺序表的基本操作" class="headerlink" title="顺序表的基本操作"></a>顺序表的基本操作</h2><pre><code>#include &lt;iostream&gt;
+#include &lt;stdlib.h&gt;
+#define ElemType int
+#define maxsize 100
+</code></pre>
         
-          <a class="article-more-a" href="/2019/04/13/画哈弗曼树/#more">more >></a>
+          <a class="article-more-a" href="/2019/04/13/数据结构：顺序表/#more">more >></a>
         
       
 
       
-    </p></div>
+    </div>
     <div class="article-info article-info-index">
       
       
@@ -450,7 +454,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/13/画哈弗曼树/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/04/13/数据结构：顺序表/">展开全文 >></a>
         </p>
       
 
@@ -562,14 +566,14 @@ typedef int ElemType;
 
 
   
-    <article id="post-数据结构：顺序表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-画哈弗曼树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/13/数据结构：顺序表/">数据结构：顺序表</a>
+      <a class="article-title" href="/2019/04/13/画哈弗曼树/">画哈夫曼树</a>
     </h1>
   
 
@@ -577,7 +581,7 @@ typedef int ElemType;
         
         
 
-<a href="/2019/04/13/数据结构：顺序表/" class="archive-article-date">
+<a href="/2019/04/13/画哈弗曼树/" class="archive-article-date">
   	<time datetime="2019-04-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-13</time>
 </a>
         
@@ -585,18 +589,15 @@ typedef int ElemType;
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="顺序表的基本操作"><a href="#顺序表的基本操作" class="headerlink" title="顺序表的基本操作"></a>顺序表的基本操作</h2><pre><code>#include &lt;iostream&gt;
-#include &lt;stdlib.h&gt;
-#define ElemType int
-#define maxsize 100
-</code></pre>
+        <p>哈弗曼树又称最优二叉树，是一类带权路径长度最短的树，其画法如下：</p>
+<p>已知一组数字：4，9，1，5，1，7，9，1，1<br>
         
-          <a class="article-more-a" href="/2019/04/13/数据结构：顺序表/#more">more >></a>
+          <a class="article-more-a" href="/2019/04/13/画哈弗曼树/#more">more >></a>
         
       
 
       
-    </div>
+    </p></div>
     <div class="article-info article-info-index">
       
       
@@ -615,7 +616,7 @@ typedef int ElemType;
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/13/数据结构：顺序表/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/04/13/画哈弗曼树/">展开全文 >></a>
         </p>
       
 
@@ -976,6 +977,9 @@ typedef int ElemType;
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
     	<div class="footer-left">
     		&copy; 2019 Obsetear
     	</div>
@@ -985,17 +989,14 @@ typedef int ElemType;
     </div>
   </div>
 
-  
-        <!-- 不蒜子统计 -->
-        <span id="busuanzi_container_site_pv">
-                本站总访问量<span id="busuanzi_value_site_pv"></span>次
-        </span>
-        <span class="post-meta-divider">|</span>
-        <span id="busuanzi_container_site_uv" style="display:none">
-                本站访客数<span id="busuanzi_value_site_uv"></span>人
-        </span>
-        <script async src="/busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  
+  <div class="powered-by">
+    <span id="busuanzi_container_site_uv">
+        本站访客数:<span id="busuanzi_value_site_uv"></span> ||
+    </span>
+    <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+    </span>
+</div>
   
 </footer>
     </div>
@@ -1085,10 +1086,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ctf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
@@ -1098,6 +1095,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ctf</a>
               </li>
              
               <li class="article-tag-list-item">

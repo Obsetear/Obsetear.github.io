@@ -2,7 +2,7 @@ const ap = new APlayer({
     container: document.getElementById('/aplayer'),
     // mini: false,
     fixed: true,//吸底模式
-    autoplay: true,//默认是否自动播放
+    autoplay: false,//默认是否自动播放
     theme: '#FADFA3',
     loop: 'all',
     order: 'random',
@@ -50,14 +50,14 @@ const ap = new APlayer({
             url: 'http://music.163.com/song/media/outer/url?id=29966565.mp3',
             cover: 'http://p1.music.126.net/f4HkWKq-NrCTlnrZWP4cpQ==/6647647303036966.jpg',
             lrc: '',
-	    theme: '#46718b'
+	        theme: '#46718b'
         },
 		{
             name: 'Stronger',
             artist: 'Kelly Clarkson',
             url: 'http://music.163.com/song/media/outer/url?id=26569168.mp3',
             cover: 'http://p1.music.126.net/NyN6he8m4t4F_yjOR_Tlww==/2495891395114271.jpg',
-	    lrc: '',
+	        lrc: '',
             theme: '#46718b'
         }
     ]

@@ -418,26 +418,24 @@ setcookie(session_name(),&apos;&apos;,time()-1,&apos;/&apos;)//销毁保存在�
   
   
   
-      <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<div id="gitalk-container"></div>
+
 <script type="text/javascript">
-
-if(true){
-	var gitalk = new Gitalk({
-  	clientID: '',
-  	clientSecret: '',
-  	repo: 'Obsete.github.io',
-  	owner: '',
-  	admin: [''],
-  	id: 'Sun May 05 2019 00:00:00 GMT+0800',
-  	distractionFreeMode: 'true'
-})
-gitalk.render('gitalk-container') 
-}
+    var gitalk = new Gitalk({
+        clientID: '339e480a6a37bb5006e3',
+        clientSecret: '6585ae428ad612134fff1866f22f1c979b940d8e',
+        repo: 'Obsete.github.io',
+        owner: 'Obsetear',
+        admin: 'Obsetear',
+        id: document.title 
+        #采用此种方法（将被location.pathname更换为document.title）就可避免上述的坑
+    })
+    gitalk.render('gitalk-container')
 </script>
-  
+    
 
 
 

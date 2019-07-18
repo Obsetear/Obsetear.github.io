@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="绿树成阴">
 <meta property="og:description" content="数据库的一些基本操作一、数据库的连接及使用1、连接数据库：先输入”mysql (-hlocalhost) -uroot -p”命令（有些时候 -hlocalhost可以省略），然后输入密码即可。（注：mysql要处于启动状态）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-04T12:21:52.493Z">
+<meta property="og:updated_time" content="2019-07-18T11:16:32.068Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP学习笔记（5）">
 <meta name="twitter:description" content="数据库的一些基本操作一、数据库的连接及使用1、连接数据库：先输入”mysql (-hlocalhost) -uroot -p”命令（有些时候 -hlocalhost可以省略），然后输入密码即可。（注：mysql要处于启动状态）">
@@ -306,7 +306,75 @@ select 语句 union all select 语句;//没有有去重作用
 <pre><code>UPDATE 表名 SET 字段1=值1，字段2=值2，…WHERE 条件;
 </code></pre><p>21、数据的删除：</p>
 <pre><code>DELETE FROM 表名 WHERE 条件;
-</code></pre>
+</code></pre><h2 id="六、MySQL数据类型"><a href="#六、MySQL数据类型" class="headerlink" title="六、MySQL数据类型"></a>六、MySQL数据类型</h2><p>1、数值类型</p>
+<pre><code>1）整数类型
+tinyint、smallint、mediumint、int和bigint
+
+2）zerofill属性
+配合int使用，不够指定位数自动填充0
+
+3）unsigned（无符号）
+字段使用此属性之后只能保存非负数，它的下限取0，上限取原值的2倍。
+
+4）主键和auto_increment
+auto_increment属性必须配合主键使用
+
+设置主键：
+    create table 表名(字段1 字段类型1 auto_increment,字段2 字段类型2,primary key(字段1));
+    或
+    create table 表名(字段1 字段类型1 auto_increment primary key);
+
+忘了设置主键，之后添加主键
+alter table 表名 add primary key (字段名);
+
+删除 auto_increment属性：
+alter table 表名 modify 字段名 字段数据类型;//（不设置auto_increment属性就可以将其删除）
+
+删除主键：（删除主键之前必须先删除auto_increment属性）
+alter table 表名 drop primary key;
+
+5）设置默认值
+在字段类型后加 default 默认值
+
+6）小数的表示
+
+浮点数：
+float（单精度）：精确到大约7位（整数部分加小数部分）
+double（双精度）：精确到大约15位（整数部分加小数部分）
+
+定点数：
+create table t1(字段 declimal(5,2));
+</code></pre><p>2、日期类型</p>
+<pre><code>DATETIME
+函数now()可以获取当前具体时间
+</code></pre><p>3、字符串类型</p>
+<pre><code>CHAR(M)            //M的值在0~255之间，不管是中英文只能保存M个
+
+VARCHAR(M)        //M的值在0~65535之间
+
+TINTEXT            //允许长度0~255字符
+
+TEXT            //允许长度0~65535字符
+
+MEDIUMTEXT        //允许长度0~16,777,215字符
+
+LONGTEXT        //允许长度0~4,294,967,295字符
+</code></pre><p>char和varchar的区别：</p>
+<pre><code>char类型的字符所占的存储空间是固定,不管你用的时候存了几个字符，它所占的空间都是你当初设定的字符空间
+    比如char(255)哪怕你存的只是1个a，那么它也是站255个字符长度的空间!
+
+varchar列所占的存储空间是可变的,根据存入的字符长度来确定实际占多少的空间!
+    varchar(255) 实际所占的空间就是实际字符的长度+1个字节！
+    varchar(超过255) 实际所占的空间就是实际字符的长度+2个字节！
+    varchar更节省空间!
+
+在检索时，char列删除尾部的空格，而varchar则保留这些空格。
+</code></pre><p> 选择：由于char是固定长度，所以它的处理速度比varchar快，但是缺点是浪费存储空间，所以对于那些长度变化不大的数据可以选择此列</p>
+<p>总结：</p>
+<p>以上命令的结尾处几乎全部都有分号，在输入命令时不要忘了或者不要写成冒号（因为我就写错过）。</p>
+<p>以上命令都不区分大小写。</p>
+<p>输入时注意不要输入中文符号。</p>
+
       
 
       
@@ -458,7 +526,7 @@ select 语句 union all select 语句;//没有有去重作用
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#数据库的一些基本操作"><span class="toc-number">1.</span> <span class="toc-text">数据库的一些基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、数据库的连接及使用"><span class="toc-number">1.1.</span> <span class="toc-text">一、数据库的连接及使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、数据库的增、删"><span class="toc-number">1.2.</span> <span class="toc-text">二、数据库的增、删</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、数据库的修改"><span class="toc-number">1.3.</span> <span class="toc-text">三、数据库的修改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、数据库的查找"><span class="toc-number">1.4.</span> <span class="toc-text">四、数据库的查找</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、数据的填入与删除"><span class="toc-number">1.5.</span> <span class="toc-text">五、数据的填入与删除</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#数据库的一些基本操作"><span class="toc-number">1.</span> <span class="toc-text">数据库的一些基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、数据库的连接及使用"><span class="toc-number">1.1.</span> <span class="toc-text">一、数据库的连接及使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、数据库的增、删"><span class="toc-number">1.2.</span> <span class="toc-text">二、数据库的增、删</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、数据库的修改"><span class="toc-number">1.3.</span> <span class="toc-text">三、数据库的修改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、数据库的查找"><span class="toc-number">1.4.</span> <span class="toc-text">四、数据库的查找</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、数据的填入与删除"><span class="toc-number">1.5.</span> <span class="toc-text">五、数据的填入与删除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、MySQL数据类型"><span class="toc-number">1.6.</span> <span class="toc-text">六、MySQL数据类型</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -470,26 +538,9 @@ select 语句 union all select 语句;//没有有去重作用
 
 
 
+<!--
 
-  <!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC80NTM1My8yMTg2Ng==">
-	<script type="text/javascript">
-   (function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-	</script>
-<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
-<!-- City版安装代码已完成 -->
-
+-->
 
   
   
@@ -513,7 +564,7 @@ var gitalk = new Gitalk({
   clientSecret: '6585ae428ad612134fff1866f22f1c979b940d8e',
   repo: 'Obsete.github.io',
   owner: 'Obsetear',
-  admin: ['Obsetear'],
+  admin: ['Obsete'],
   id: md5(window.location.pathname),
   distractionFreeMode: true
 })
@@ -631,15 +682,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ctf</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -651,11 +702,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color4">xss</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">xss</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">

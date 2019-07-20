@@ -7,24 +7,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>爆破 | Obsessiveness</title>
+  <title>小苹果 | Obsessiveness</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言：今天做了几道很有意思的web题，题目说是爆破，实际上与爆破y一点没有都关系。。。">
+  <meta name="description" content="前言：今天做了一道非常绕的图片隐写题，不过通过这道题也收集到了一波工具，涨了不少姿势。">
 <meta name="keywords" content="wp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="爆破">
-<meta property="og:url" content="http://yoursite.com/2019/07/14/Web——爆破wp/index.html">
+<meta property="og:title" content="小苹果">
+<meta property="og:url" content="http://yoursite.com/2019/07/08/小苹果wp/index.html">
 <meta property="og:site_name" content="Obsessiveness">
-<meta property="og:description" content="前言：今天做了几道很有意思的web题，题目说是爆破，实际上与爆破y一点没有都关系。。。">
+<meta property="og:description" content="前言：今天做了一道非常绕的图片隐写题，不过通过这道题也收集到了一波工具，涨了不少姿势。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/wp/1.jpg">
-<meta property="og:image" content="http://yoursite.com/wp/2.jpg">
-<meta property="og:image" content="http://yoursite.com/wp/3.jpg">
-<meta property="og:updated_time" content="2019-07-20T10:44:25.145Z">
+<meta property="og:image" content="http://yoursite.com/wp/apple.png">
+<meta property="og:image" content="http://yoursite.com/wp/1.png">
+<meta property="og:image" content="http://yoursite.com/wp/2.png">
+<meta property="og:image" content="http://yoursite.com/wp/3.png">
+<meta property="og:image" content="http://yoursite.com/wp/4.png">
+<meta property="og:image" content="http://yoursite.com/wp/5.png">
+<meta property="og:image" content="http://yoursite.com/wp/6.png">
+<meta property="og:image" content="http://yoursite.com/wp/7.png">
+<meta property="og:updated_time" content="2019-07-20T10:44:23.776Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="爆破">
-<meta name="twitter:description" content="前言：今天做了几道很有意思的web题，题目说是爆破，实际上与爆破y一点没有都关系。。。">
-<meta name="twitter:image" content="http://yoursite.com/wp/1.jpg">
+<meta name="twitter:title" content="小苹果">
+<meta name="twitter:description" content="前言：今天做了一道非常绕的图片隐写题，不过通过这道题也收集到了一波工具，涨了不少姿势。">
+<meta name="twitter:image" content="http://yoursite.com/wp/apple.png">
   
     <link rel="alternative" href="/atom.xml" title="Obsessiveness" type="application/atom+xml">
   
@@ -177,14 +182,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Web——爆破wp" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-小苹果wp" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      爆破
+      小苹果
     </h1>
   
 
@@ -197,53 +202,52 @@
         </span>
 
 
-<a href="/2019/07/14/Web——爆破wp/" class="archive-article-date">
-  	<time datetime="2019-07-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-14</time>
+<a href="/2019/07/08/小苹果wp/" class="archive-article-date">
+  	<time datetime="2019-07-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>前言</strong>：今天做了几道很有意思的web题，题目说是爆破，实际上与爆破y一点没有都关系。。。<br><a id="more"></a></p>
-<p>题目来源：i春秋</p>
-<h2 id="爆破一"><a href="#爆破一" class="headerlink" title="爆破一"></a>爆破一</h2><p>题目描述：flag就在某六位变量中。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">include &quot;flag.php&quot;;</span><br><span class="line">$a = @$_REQUEST[&apos;hello&apos;];</span><br><span class="line">if(!preg_match(&apos;/^\w*$/&apos;,$a ))&#123;</span><br><span class="line">  die(&apos;ERROR&apos;);</span><br><span class="line">&#125;</span><br><span class="line">eval(&quot;var_dump($$a);&quot;);</span><br><span class="line">show_source(__FILE__);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
-<p>老规矩，不会的函数先百度：</p>
-<p><code>$_REQUEST — HTTP Request</code> 变量（超全局变量）</p>
-<p>默认情况下包含了 <code>$_GET，$_POST 和 $_COOKIE</code> 的数组。</p>
-<p>按我理解就是，它可以接收到通过get，post，cookie传过来的值。（所以说题目中<code>&#39;hello&#39;</code>的值我们可以通过get或者post的方式传过来）</p>
-<pre><code>preg_match()
-</code></pre><p>正则表达式匹配，<code>\w</code> 代表一个数字或字母或下划线；<code>*</code>代表其前面的字符，可以出现多次；<code>\w*</code>表示有多个<code>\w</code></p>
-<pre><code>eval() 
-</code></pre><p>把字符串按照 PHP 代码来计算</p>
-<pre><code>$$a
-</code></pre><p>可以理解为<code>$( $a )</code>  ，这是这道题的突破口，题目既然说 flag 在六位变量中，那我们就可以用<code>$GLOBALS</code>（一个包含了全部变量的全局组合数组）来输出全部变量，从中得到flag。<br>构造payload:</p>
-<pre><code>?hello=GLOBALS
-</code></pre><p>此时</p>
-<pre><code>$$a=$(GLOBALS)=$GLOBALS
-</code></pre><p><br></p>
-<p><img src="/wp/1.jpg"></p>
-<h2 id="爆破二"><a href="#爆破二" class="headerlink" title="爆破二"></a>爆破二</h2><p>题目描述：flag不在变量中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">include &quot;flag.php&quot;;</span><br><span class="line">$a = @$_REQUEST[&apos;hello&apos;];</span><br><span class="line">eval( &quot;var_dump($a);&quot;);</span><br><span class="line">show_source(__FILE__);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
-<p>这次flag不在变量中了，所以上一题的方法就没法用了，这题有两种做法：</p>
-<p>方发一：用<code>file_get_contents() 函数</code> （把整个文件读入一个字符串中）把flag.php的内容读取到hello里，然后输出。</p>
-<p>构造payload：</p>
-<p><code>?hello=file_get_contents(&#39;flag.php&#39;)</code></p>
-<p>方法二：大多数服务器都是Linux，这里需要用到一个Linux的命令<code>cat</code></p>
-<p>cat主要有三大功能：<br>1.一次显示整个文件。$ cat filename<br>2.从键盘创建一个文件。$ cat &gt; filename<br>   只能创建新文件,不能编辑已有文件.<br>3.将几个文件合并为一个文件： $cat file1 file2 &gt; file</p>
-<p>然后构造payload：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">?hello=); echo `cat ./flag.php`;//</span><br><span class="line"></span><br><span class="line">`` 中是要执行的命令</span><br><span class="line"> </span><br><span class="line">//是注释掉后面的部分</span><br></pre></td></tr></table></figure>
-<p>之后再查看网页源码就OK了。</p>
-<p><img src="/wp/2.jpg"></p>
-<h2 id="爆破三"><a href="#爆破三" class="headerlink" title="爆破三"></a>爆破三</h2><p>题目描述：这个真的是爆破。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php </span><br><span class="line">error_reporting(0);</span><br><span class="line">session_start();</span><br><span class="line">require(&apos;./flag.php&apos;);</span><br><span class="line">if(!isset($_SESSION[&apos;nums&apos;]))&#123;</span><br><span class="line">  $_SESSION[&apos;nums&apos;] = 0;</span><br><span class="line">  $_SESSION[&apos;time&apos;] = time();</span><br><span class="line">  $_SESSION[&apos;whoami&apos;] = &apos;ea&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if($_SESSION[&apos;time&apos;]+120&lt;time())&#123;</span><br><span class="line">  session_destroy();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$value = $_REQUEST[&apos;value&apos;];</span><br><span class="line">$str_rand = range(&apos;a&apos;, &apos;z&apos;);</span><br><span class="line">$str_rands = $str_rand[mt_rand(0,25)].$str_rand[mt_rand(0,25)];</span><br><span class="line"></span><br><span class="line">if($_SESSION[&apos;whoami&apos;]==($value[0].$value[1]) &amp;&amp; substr(md5($value),5,4)==0)&#123;</span><br><span class="line">  $_SESSION[&apos;nums&apos;]++;</span><br><span class="line">  $_SESSION[&apos;whoami&apos;] = $str_rands;</span><br><span class="line">  echo $str_rands;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if($_SESSION[&apos;nums&apos;]&gt;=10)&#123;</span><br><span class="line">  echo $flag;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">show_source(__FILE__);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
-<p>这题比前两题的内容都长，但看懂以后，你就会发现比前两题都简单。</p>
-<p>先百度一下不会的函数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">error_reporting(0)		// 关闭错误报告</span><br><span class="line"></span><br><span class="line">range(&apos;a&apos;, &apos;z&apos;)				//建立一个包含指定范围单元的数组</span><br><span class="line">（所以这里的$str_rand=&quot;abcd...yz&quot;）</span><br><span class="line"></span><br><span class="line">mt_rand(0,25)				//随机返回0-25之间的一个数</span><br><span class="line"></span><br><span class="line">substr(string,start,length) 			//返回字符串的一部分</span><br><span class="line">string 			//必填，要被分割的字符串</span><br><span class="line">start 			//必需。规定在字符串的何处开始</span><br><span class="line">length			//可选。规定要返回的字符串长度。默认是直到字符串的结尾</span><br></pre></td></tr></table></figure>
-<p>这里我们主要要构造value，使它的值与<code>$_SESSION[&#39;whoami&#39;]</code>相等，并且还满足 <code>substr(md5($value),5,4)==0)</code>，由于md5不能对数组进行处理，所以这里用数组绕过。</p>
-<p>第一次我们只要输入<code>?value[]=ea</code>，页面就会输出两个随机字母，然后把这两个随机字母作为value的值再次输入，循环此过程10次，flag就出来了。</p>
-<p><img src="/wp/3.jpg"></p>
+        <p><strong>前言</strong>：今天做了一道非常绕的图片隐写题，不过通过这道题也收集到了一波工具，涨了不少姿势。<br><a id="more"></a><br>题目来源：实验吧</p>
+<p>题目的名称是小苹果，然后就只有一张中国结的图片apple.png</p>
+<p><img src="/wp/apple.png"></p>
+<p>直觉告诉我要扫这张二维码，扫完码内容如下：</p>
+<p>\u7f8a\u7531\u5927\u4e95\u592b\u5927\u4eba\u738b\u4e2d\u5de5</p>
+<p>乍一看，这是什么东西！</p>
+<p>然后去百度了一波才知道，这原来是Unicode编码。</p>
+<p>用在线工具解码：</p>
+<p><img src="/wp/1.png"></p>
+<p>解码内容如下：</p>
+<p>羊由大井夫大人王中工</p>
+<p>乍一看，是我操作错了吗?这又是什么什么东西？</p>
+<p>后来看大佬的wp才知道这个是当铺密码</p>
+<p>百度一波当铺密码：</p>
+<p>当铺密码就是一种将中文和数字进行转化的密码，算法相当简单:当前汉字有多少笔画出头，就是转化成数字几。</p>
+<p>知道其算法就好破解了，直接手动破解：</p>
+<p>9158753624</p>
+<p>这还不是flag，到这才完成了一半！</p>
+<p>然后对图片binwalk一下，（之前我的binwalk一直都没安装好，直到做这道题我才把binwalk配好）发现有一个rar的压缩包</p>
+<p><img src="/wp/2.png"></p>
+<p>直接将图片的后缀改为.rar，然后发现里面有一个mp3的文件apple.mp3</p>
+<p><img src="/wp/3.png"></p>
+<p>解压后打开发现就是歌曲小苹果，然后又偷瞄大佬的wp才知道要用解密MP3的软件mp3stego才行。</p>
+<p>mp3stego下载地址：<a href="http://www.petitcolas.net/steganography/mp3stego/" target="_blank" rel="noopener">http://www.petitcolas.net/steganography/mp3stego/</a></p>
+<p>下载之后不会用，又去百度了一波，然后总结出使用方法：</p>
+<p>先打开cmd命令行（本来以为用那个蓝色的框Windows PowerShell也可以的，后来试了好久才发现只能用cmd来玩这个软件）</p>
+<p>然后用cd 命令进入该文件的MP3Stego目录下</p>
+<p>把apple.mp3放入MP3Stego目录下</p>
+<p><img src="/wp/4.png"></p>
+<p>然后输入命令：Decode -X -P 9158753624 apple.mp3</p>
+<p>9158753624就是我们刚才通过当铺密码解码得到的密码</p>
+<p><img src="/wp/5.png"></p>
+<p>之后在MP3Stego目录下就会生成两个有关apple的文件</p>
+<p><img src="/wp/6.png"></p>
+<p>打开那个txt文件里面有一串base64加密的字符串</p>
+<p><img src="/wp/7.png"></p>
+<p>解码最终得到flag：</p>
+<p>CTF{xiao_ping_guo}</p>
 
       
 
@@ -344,7 +348,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/14/Web——爆破wp/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/08/小苹果wp/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -358,18 +362,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/18/Misc系列/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/07/08/小苹果/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Misc系列
+          Misc——小苹果wp
         
       </div>
     </a>
   
   
-    <a href="/2019/07/14/爆破/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">爆破</div>
+    <a href="/2019/06/24/ISCC赛后总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ISCC赛后总结</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -396,7 +400,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#爆破一"><span class="toc-number">1.</span> <span class="toc-text">爆破一</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#爆破二"><span class="toc-number">2.</span> <span class="toc-text">爆破二</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#爆破三"><span class="toc-number">3.</span> <span class="toc-text">爆破三</span></a></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>

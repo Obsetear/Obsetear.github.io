@@ -7,22 +7,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Base解码总结 | Obsessiveness</title>
+  <title>PHP超级全局变量 | Obsessiveness</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Base64: 主要有大写英文字母A-Z，小写英文字母a-z，数字0-9，+和/">
+  <meta name="description" content="0x01 全局变量和局部变量">
 <meta name="keywords" content="总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Base解码总结">
-<meta property="og:url" content="http://yoursite.com/2019/03/25/Base解码总结/index.html">
+<meta property="og:title" content="PHP超级全局变量">
+<meta property="og:url" content="http://yoursite.com/2019/08/17/PHP超级全局变量/index.html">
 <meta property="og:site_name" content="Obsessiveness">
-<meta property="og:description" content="Base64: 主要有大写英文字母A-Z，小写英文字母a-z，数字0-9，+和/">
+<meta property="og:description" content="0x01 全局变量和局部变量">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/picture/42.png">
-<meta property="og:updated_time" content="2019-07-09T03:05:24.274Z">
+<meta property="og:image" content="http://yoursite.com/php/sq1.jpg">
+<meta property="og:image" content="http://yoursite.com/php/sq2.jpg">
+<meta property="og:image" content="http://yoursite.com/php/sq3.jpg">
+<meta property="og:image" content="http://yoursite.com/php/sq4.jpg">
+<meta property="og:image" content="http://yoursite.com/php/sq5.jpg">
+<meta property="og:image" content="http://yoursite.com/php/sq6.jpg">
+<meta property="og:image" content="http://yoursite.com/php/sq7.jpg">
+<meta property="og:image" content="http://yoursite.com/php/sq8.jpg">
+<meta property="og:updated_time" content="2019-08-23T01:24:47.113Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Base解码总结">
-<meta name="twitter:description" content="Base64: 主要有大写英文字母A-Z，小写英文字母a-z，数字0-9，+和/">
-<meta name="twitter:image" content="http://yoursite.com/picture/42.png">
+<meta name="twitter:title" content="PHP超级全局变量">
+<meta name="twitter:description" content="0x01 全局变量和局部变量">
+<meta name="twitter:image" content="http://yoursite.com/php/sq1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Obsessiveness" type="application/atom+xml">
   
@@ -175,14 +182,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Base解码总结" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-PHP超级全局变量" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Base解码总结
+      PHP超级全局变量
     </h1>
   
 
@@ -195,18 +202,75 @@
         </span>
 
 
-<a href="/2019/03/25/Base解码总结/" class="archive-article-date">
-  	<time datetime="2019-03-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-25</time>
+<a href="/2019/08/17/PHP超级全局变量/" class="archive-article-date">
+  	<time datetime="2019-08-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p></p><h1>Base64:</h1><p></p>
-<p>主要有大写英文字母A-Z，小写英文字母a-z，数字0-9，+和/ </p><br><img src="/picture/42.png"><br><a id="more"></a><br><h1>Base32:</h1><br><p>只有大写英文字母A-Z，和数字234567</p><br><h1>Base16:</h1><br><p>就是16进制，它只有数字0-9，和大写英文字母A-F</p>
-
-<p></p><h1>凯撒密码：</h1><br>加密公式：f(a) = (a+N) % 26<br>解密公式：f(a) = (a+(a-N)) % 26<p></p>
+        <h2 id="0x01-全局变量和局部变量"><a href="#0x01-全局变量和局部变量" class="headerlink" title="0x01 全局变量和局部变量"></a>0x01 全局变量和局部变量</h2><a id="more"></a>
+<p>全局变量：定义在函数外部变量的就是全局变量，它的作用域是从定义处一直到文件结尾。</p>
+<p>局部变量：函数内定义的变量就是局部变量，它的作用域为函数内。</p>
+<p>函数内，一般情况下是访问不了全局变量的</p>
+<p>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$a=9;</span><br><span class="line">$b=6;</span><br><span class="line">function add()</span><br><span class="line">&#123;</span><br><span class="line">	echo $a+$b;//输出0</span><br><span class="line">&#125;</span><br><span class="line">add();</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>在函数内要是需要访问全局变量就需要使用<code>global</code>关键字或使用 <code>$GLOBALS[index]</code>数组（超全局变量）。</p>
+<p>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$a=9;</span><br><span class="line">$b=6;</span><br><span class="line">function add()</span><br><span class="line">&#123;</span><br><span class="line">	//使用global关键字</span><br><span class="line">	global $a,$b;</span><br><span class="line">	echo $a+$b;//输出15</span><br><span class="line">	echo &quot;&lt;br /&gt;&quot;;</span><br><span class="line">	//使用$GLOBALS[]数组</span><br><span class="line">	echo $GLOBALS[&apos;a&apos;]+$GLOBALS[&apos;b&apos;];//输出15</span><br><span class="line">&#125;</span><br><span class="line">add();</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="0x02-超级全局变量"><a href="#0x02-超级全局变量" class="headerlink" title="0x02 超级全局变量"></a>0x02 超级全局变量</h2><p>PHP中预定义了几个超级全局变量（superglobals） ，这意味着它们在一个脚本的全部作用域中都可用。你不需要特别说明，就可以在函数及类中使用。</p>
+<p>PHP中的超全局变量：</p>
+<pre><code>$GLOBALS
+$_SERVER
+$_POST
+$_GET
+$_REQUEST
+$_FILES
+$_ENV
+$_COOKIE
+$_SESSION
+</code></pre><h4 id="1、-GLOBALS"><a href="#1、-GLOBALS" class="headerlink" title="1、$GLOBALS"></a>1、$GLOBALS</h4><p>一个包含了全部变量的全局组合数组。变量的名字就是数组的键，变量的值就是键对应的值。</p>
+<p>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$a=9;</span><br><span class="line">$b=6;</span><br><span class="line">function add()</span><br><span class="line">&#123;</span><br><span class="line">	$GLOBALS[&apos;c&apos;]=$GLOBALS[&apos;a&apos;]+$GLOBALS[&apos;b&apos;];</span><br><span class="line">	//c被定义成了超全局变量，在函数外也可以访问</span><br><span class="line">&#125;</span><br><span class="line">add();</span><br><span class="line">echo $c;//输出15</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="2、-SERVER"><a href="#2、-SERVER" class="headerlink" title="2、$_SERVER"></a>2、$_SERVER</h4><p><code>$_SERVER</code> 是一个包含了诸如头信息(header)、路径(path)、以及脚本位置(script locations)等等信息的数组。</p>
+<p>例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">echo &quot;&lt;pre&gt;&quot;;</span><br><span class="line">var_dump($_SERVER);</span><br><span class="line">echo &quot;&lt;/pre&gt;&quot;;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/php/sq1.jpg"></p>
+<h4 id="3、-POST"><a href="#3、-POST" class="headerlink" title="3、$_POST"></a>3、$_POST</h4><p>$_POST用于接收浏览器以post形式传递过来的数据，主要用于收集表单数据。</p>
+<p>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">if(isset($_POST[&apos;submit&apos;]))</span><br><span class="line">&#123;</span><br><span class="line">	var_dump($_POST[&apos;name&apos;]);</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line">&lt;form method=&quot;post&quot;&gt;</span><br><span class="line">	&lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;</span><br><span class="line">	&lt;input type=&quot;submit&quot; name=&quot;submit&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/php/sq2.jpg"></p>
+<h4 id="4、-GET"><a href="#4、-GET" class="headerlink" title="4、$_GET"></a>4、$_GET</h4><p>$_GET用于接收浏览器以get形式传递过来的数据，也主要用于接收表单数据，不过get的传递方式相对于post而言安全性较低。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">if(isset($_GET[&apos;submit&apos;]))</span><br><span class="line">&#123;</span><br><span class="line">	var_dump($_GET[&apos;name&apos;]);</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line">&lt;form method=&quot;get&quot;&gt;</span><br><span class="line">	&lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;</span><br><span class="line">	&lt;input type=&quot;submit&quot; name=&quot;submit&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/php/sq3.jpg"></p>
+<h4 id="5、-REQUEST"><a href="#5、-REQUEST" class="headerlink" title="5、$_REQUEST"></a>5、$_REQUEST</h4><p><code>$_REQUEST</code>是一个默认情况下包含了 <code>$_GET</code>，<code>$_POST</code> 和 <code>$_COOKIE</code> 的数组。</p>
+<p>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">setcookie(&quot;c&quot;,&apos;cookie&apos;,time()+3600);</span><br><span class="line">$_GET[&apos;g&apos;];</span><br><span class="line">$_POST[&apos;p&apos;];</span><br><span class="line">echo &quot;&lt;pre&gt;&quot;;</span><br><span class="line">var_dump($_REQUEST);</span><br><span class="line">echo &quot;&lt;/pre&gt;&quot;;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/php/sq4.jpg"></p>
+<h4 id="6、-FILES"><a href="#6、-FILES" class="headerlink" title="6、$_FILES"></a>6、$_FILES</h4><p><code>$_FILES</code>主要用于接收上传过来的文件的各项信息，是一个二维数组。第一维用于储存<code>input</code>标签中<code>type</code>类型为<code>file</code>的<code>name</code>属性的值，第二维用于储存文件的各项信息。</p>
+<p>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">if(isset($_POST[&apos;submit&apos;]))</span><br><span class="line">&#123;</span><br><span class="line">	echo &quot;&lt;pre&gt;&quot;;</span><br><span class="line">	var_dump($_FILES[&apos;myfile&apos;]);</span><br><span class="line">	echo &quot;&lt;/pre&gt;&quot;;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line">&lt;meta charset=&quot;utf-8&quot; /&gt;</span><br><span class="line">&lt;form method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;</span><br><span class="line">	&lt;input type=&quot;file&quot; name=&quot;myfile&quot;&gt;</span><br><span class="line">	&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;文件上传&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/php/sq5.jpg"></p>
+<p><code>$_FILES</code>数组内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">$_FILES[&apos;myfile&apos;][&apos;name&apos;] //客户端文件的原名称。 </span><br><span class="line"></span><br><span class="line">$_FILES[&apos;myfile&apos;][&apos;type&apos;] //文件的 MIME 类型，需要浏览器提供该信息的支持。 </span><br><span class="line"></span><br><span class="line">$_FILES[&apos;myfile&apos;][&apos;size&apos;] //已上传文件的大小，单位为字节。 </span><br><span class="line"></span><br><span class="line">$_FILES[&apos;myfile&apos;][&apos;tmp_name&apos;] //文件被上传后在服务端储存的临时文件名，一般是系统默认。可以在php.ini的upload_tmp_dir 指定，但 用 putenv() 函数设置是不起作用的。 </span><br><span class="line"></span><br><span class="line">$_FILES[&apos;myfile&apos;][&apos;error&apos;] //和该文件上传相关的错误代码。</span><br><span class="line">有关error值的说明：</span><br><span class="line"></span><br><span class="line">值：0; 没有错误发生，文件上传成功。</span><br><span class="line"></span><br><span class="line">值：1; 上传的文件超过了 php.ini 中 upload_max_filesize 选项限制的值。</span><br><span class="line"></span><br><span class="line">值：2; 上传文件的大小超过了 HTML 表单中 MAX_FILE_SIZE 选项指定的值。</span><br><span class="line"></span><br><span class="line">值：3; 文件只有部分被上传。</span><br><span class="line"></span><br><span class="line">值：4; 没有文件被上传。</span><br><span class="line"></span><br><span class="line">值：5; 上传文件大小为0。</span><br></pre></td></tr></table></figure>
+<h4 id="7、-ENV"><a href="#7、-ENV" class="headerlink" title="7、$_ENV"></a>7、$_ENV</h4><p><code>$_ENV</code>是一个包含服务器端环境变量的数组。<code>$_ENV</code>只是被动的接受服务器端的环境变量并把它们转换为数组元素，你可以尝试直接输出它。</p>
+<p>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">//print_r($_ENV);</span><br><span class="line">var_dump($_ENV);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/php/sq6.jpg"></p>
+<p>如果打印输出 $_ENV 为空，可能是 php.ini 的配置的原因：</p>
+<pre><code>variables_order = &quot;GPCS&quot;
+</code></pre><p>要想让$_ENV的值不为空，则需要修改variables_orde为：</p>
+<pre><code>variables_order = &quot;EGPCS&quot;
+</code></pre><p>上述配置表示 PHP 接受的外部变量来源及顺序，EGPCS 是 Environment、Get、Post、Cookies 和 Server 的缩写。如果 variables_order 的配置中缺少 E ，则 PHP 无法接受环境变量，那么 $_ENV 也就为空了。</p>
+<h4 id="8、-COOKIE"><a href="#8、-COOKIE" class="headerlink" title="8、$_COOKIE"></a>8、$_COOKIE</h4><p><code>$_COOKIE</code>用来存储cookie的值，如果使用了setcookie()函数，只有在cookie的存活时间内，都可以在$_COOKIE中访问到。而且只要在一个脚本中执行了setcookie()函数，在其他脚本中都可以访问到。</p>
+<p>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//文件test1中</span><br><span class="line">&lt;?php</span><br><span class="line">setcookie(&apos;name&apos;,&apos;xiaoming&apos;,time()+3600);</span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line">//文件test2中</span><br><span class="line">&lt;?php</span><br><span class="line">var_dump($_COOKIE);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>先访问test1，让浏览器执行setcookie()函数，然后再访问test2。</p>
+<p><img src="/php/sq7.jpg"></p>
+<h4 id="9、-SESSION"><a href="#9、-SESSION" class="headerlink" title="9、$_SESSION"></a>9、$_SESSION</h4><p><code>$_SESSION</code>用于接收session的值，session的设置与cookie不同，要想在不同脚本里访问到<code>$_SESSION</code>里的值，在使用前得先使用session_start()函数创建一个会话，</p>
+<p>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//文件test1中</span><br><span class="line">&lt;?php</span><br><span class="line">session_start();</span><br><span class="line">$_SESSION[&apos;name&apos;]=&quot;lihua&quot;;</span><br><span class="line">$_SESSION[&apos;age&apos;]=18;</span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line">//文件test2中</span><br><span class="line">&lt;?php</span><br><span class="line">session_start();</span><br><span class="line">var_dump($_SESSION);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/php/sq8.jpg"></p>
 
       
 
@@ -307,7 +371,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/25/Base解码总结/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/17/PHP超级全局变量/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -321,18 +385,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/03/25/HTML学习笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/08/21/一些常见的编码/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          HTML学习笔记
+          一些常见的编码
         
       </div>
     </a>
   
   
-    <a href="/2019/03/18/用hexo搭建个人博客总结/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">用hexo搭建个人博客总结</div>
+    <a href="/2019/08/15/命令执行&代码执行漏洞/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">命令执行&amp;代码执行漏洞</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -359,7 +423,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">Base64:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">Base32:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">Base16:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">凯撒密码：</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0x01-全局变量和局部变量"><span class="toc-number">1.</span> <span class="toc-text">0x01 全局变量和局部变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x02-超级全局变量"><span class="toc-number">2.</span> <span class="toc-text">0x02 超级全局变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、-GLOBALS"><span class="toc-number">2.0.1.</span> <span class="toc-text">1、$GLOBALS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、-SERVER"><span class="toc-number">2.0.2.</span> <span class="toc-text">2、$_SERVER</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、-POST"><span class="toc-number">2.0.3.</span> <span class="toc-text">3、$_POST</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、-GET"><span class="toc-number">2.0.4.</span> <span class="toc-text">4、$_GET</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、-REQUEST"><span class="toc-number">2.0.5.</span> <span class="toc-text">5、$_REQUEST</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6、-FILES"><span class="toc-number">2.0.6.</span> <span class="toc-text">6、$_FILES</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7、-ENV"><span class="toc-number">2.0.7.</span> <span class="toc-text">7、$_ENV</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8、-COOKIE"><span class="toc-number">2.0.8.</span> <span class="toc-text">8、$_COOKIE</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9、-SESSION"><span class="toc-number">2.0.9.</span> <span class="toc-text">9、$_SESSION</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -511,11 +575,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">总结</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color3">总结</a>
               </li>
              
               <li class="article-tag-list-item">
